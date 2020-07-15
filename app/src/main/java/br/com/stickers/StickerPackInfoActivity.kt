@@ -1,5 +1,6 @@
 package br.com.stickers
 
+import android.content.Context
 import android.content.Intent
 import android.graphics.Rect
 import android.graphics.drawable.BitmapDrawable
@@ -17,20 +18,30 @@ import java.io.FileNotFoundException
 import timber.log.Timber.d as log
 
 class StickerPackInfoActivity : BaseActivity() {
+
+    companion object {
+        fun getStartIntent(context: Context) = Intent(context, StickerPackInfoActivity::class.java)
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sticker_pack_info)
-        val trayIconUriString = intent.getStringExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_TRAY_ICON)
+
+        val trayIconUriString =
+            intent.getStringExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_TRAY_ICON)
         val website = intent.getStringExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_WEBSITE)
         val email = intent.getStringExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_EMAIL)
-        val privacyPolicy = intent.getStringExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_PRIVACY_POLICY)
-        val licenseAgreement = intent.getStringExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_LICENSE_AGREEMENT)
+        val privacyPolicy =
+            intent.getStringExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_PRIVACY_POLICY)
+        val licenseAgreement =
+            intent.getStringExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_LICENSE_AGREEMENT)
         val trayIcon = findViewById<TextView>(R.id.tray_icon)
         try {
             val inputStream = contentResolver.openInputStream(Uri.parse(trayIconUriString))
             val trayDrawable = BitmapDrawable(resources, inputStream)
             val emailDrawable = getDrawableForAllAPIs(R.drawable.sticker_3rdparty_email)
-            trayDrawable.bounds = Rect(0, 0, emailDrawable!!.intrinsicWidth, emailDrawable.intrinsicHeight)
+            trayDrawable.bounds =
+                Rect(0, 0, emailDrawable!!.intrinsicWidth, emailDrawable.intrinsicHeight)
             if (Build.VERSION.SDK_INT > 17) {
                 trayIcon.setCompoundDrawablesRelative(trayDrawable, null, null, null)
             } else {
@@ -41,7 +52,7 @@ class StickerPackInfoActivity : BaseActivity() {
                 }
             }
         } catch (e: FileNotFoundException) {
-            log("$TAG: could not find the uri for the tray image:$trayIconUriString")
+            log("could not find the uri for the tray image:$trayIconUriString")
         }
         if (website != null) {
             setupTextView(website, R.id.view_webpage)
@@ -70,10 +81,18 @@ class StickerPackInfoActivity : BaseActivity() {
     }
 
     private fun launchEmailClient(email: String) {
-        val emailIntent = Intent(Intent.ACTION_SENDTO, Uri.fromParts(
-                "mailto", email, null))
+        val emailIntent = Intent(
+            Intent.ACTION_SENDTO, Uri.fromParts(
+                "mailto", email, null
+            )
+        )
         emailIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf(email))
-        startActivity(Intent.createChooser(emailIntent, resources.getString(R.string.info_send_email_to_prompt)))
+        startActivity(
+            Intent.createChooser(
+                emailIntent,
+                resources.getString(R.string.info_send_email_to_prompt)
+            )
+        )
     }
 
     private fun launchWebpage(website: String) {
@@ -90,7 +109,4 @@ class StickerPackInfoActivity : BaseActivity() {
         }
     }
 
-    companion object {
-        private const val TAG = "StickerPackInfoActivity"
-    }
 }

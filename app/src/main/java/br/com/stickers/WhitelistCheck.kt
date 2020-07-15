@@ -1,10 +1,3 @@
-/*
- * Copyright (c) WhatsApp Inc. and its affiliates.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree.
- */
 package br.com.stickers
 
 import android.content.ContentResolver
@@ -25,7 +18,10 @@ internal object WhitelistCheck {
     @JvmStatic
     fun isWhitelisted(context: Context, identifier: String): Boolean {
         return try {
-            if (!isWhatsAppConsumerAppInstalled(context.packageManager) && !isWhatsAppSmbAppInstalled(context.packageManager)) {
+            if (!isWhatsAppConsumerAppInstalled(context.packageManager) && !isWhatsAppSmbAppInstalled(
+                    context.packageManager
+                )
+            ) {
                 return false
             }
             val consumerResult = isStickerPackWhitelistedInWhatsAppConsumer(context, identifier)
@@ -36,22 +32,34 @@ internal object WhitelistCheck {
         }
     }
 
-    private fun isWhitelistedFromProvider(context: Context, identifier: String, whatsappPackageName: String): Boolean {
+    private fun isWhitelistedFromProvider(
+        context: Context,
+        identifier: String,
+        whatsappPackageName: String
+    ): Boolean {
         val packageManager = context.packageManager
         if (isPackageInstalled(whatsappPackageName, packageManager)) {
             val whatsappProviderAuthority = whatsappPackageName + CONTENT_PROVIDER
-            val providerInfo = packageManager.resolveContentProvider(whatsappProviderAuthority, PackageManager.GET_META_DATA)
-                    ?: return false
+            val providerInfo = packageManager.resolveContentProvider(
+                whatsappProviderAuthority,
+                PackageManager.GET_META_DATA
+            )
+                ?: return false
             // provider is not there. The WhatsApp app may be an old version.
-            val queryUri = Uri.Builder().scheme(ContentResolver.SCHEME_CONTENT).authority(whatsappProviderAuthority).appendPath(
+            val queryUri = Uri.Builder().scheme(ContentResolver.SCHEME_CONTENT)
+                .authority(whatsappProviderAuthority).appendPath(
                 QUERY_PATH
-            ).appendQueryParameter(AUTHORITY_QUERY_PARAM, STICKER_APP_AUTHORITY).appendQueryParameter(
-                IDENTIFIER_QUERY_PARAM, identifier).build()
+            ).appendQueryParameter(AUTHORITY_QUERY_PARAM, STICKER_APP_AUTHORITY)
+                .appendQueryParameter(
+                    IDENTIFIER_QUERY_PARAM, identifier
+                ).build()
             context.contentResolver.query(queryUri, null, null, null, null).use { cursor ->
                 if (cursor != null && cursor.moveToFirst()) {
-                    val whiteListResult = cursor.getInt(cursor.getColumnIndexOrThrow(
-                        QUERY_RESULT_COLUMN_NAME
-                    ))
+                    val whiteListResult = cursor.getInt(
+                        cursor.getColumnIndexOrThrow(
+                            QUERY_RESULT_COLUMN_NAME
+                        )
+                    )
                     return whiteListResult == 1
                 }
             }

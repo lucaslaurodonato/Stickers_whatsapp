@@ -88,8 +88,8 @@
             android:id="@+id/divider"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:alpha="0.7"
-            android:background="@color/black" />
+            android:alpha="0.1"
+            android:background="@color/black_translucent" />
 
     </FrameLayout>
 

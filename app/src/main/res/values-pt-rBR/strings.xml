@@ -13,9 +13,9 @@
     <!-- Title of the sticker pack info page which displays the webpage, email and privacy policy of the sticker pack -->
     <string name="title_activity_sticker_pack_info">Dados</string>
     <!-- Text of button that allows user to click to go to the webpage of the publisher -->
-    <string name="view_webpage">Ver página</string>
+    <string name="view_webpage">Meu linkedin</string>
     <!-- Text of button that allows user to click to send an email -->
-    <string name="send_email">Enviar e-mail</string>
+    <string name="send_email">Enviar um e-mail</string>
     <!-- Text of button that allows user to click to go to the privacy policy website -->
     <string name="privacy_policy">Política de privacidade</string>
     <!-- Text next to the tray icon that indicates the tray icon -->
@@ -33,8 +33,10 @@
     <!-- Text of button that allows user to click to go to the license agreement website -->
     <string name="license_agreement">Contrato de licença</string>
     <!-- Title of the sticker pack list activity page in case the app contains multiple sticker packs, the singular string will be used when there is only one pack in the app -->
+
     <plurals name="title_activity_sticker_packs_list">
         <item quantity="one">Pacote de figurinhas</item>
         <item quantity="other">Pacotes de figurinhas</item>
     </plurals>
+
 </resources>

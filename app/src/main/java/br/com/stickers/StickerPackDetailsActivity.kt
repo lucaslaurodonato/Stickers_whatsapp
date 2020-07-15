@@ -7,6 +7,7 @@
  */
 package br.com.stickers
 
+import android.content.Context
 import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
@@ -24,6 +25,7 @@ import br.com.stickers.WhitelistCheck.isWhitelisted
 import java.lang.ref.WeakReference
 
 class StickerPackDetailsActivity : AddStickerPackActivity() {
+
     private var recyclerView: RecyclerView? = null
     private var layoutManager: GridLayoutManager? = null
     private var stickerPreviewAdapter: StickerPreviewAdapter? = null
@@ -33,9 +35,11 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
     private var stickerPack: StickerPack? = null
     private var divider: View? = null
     private var whiteListCheckAsyncTask: WhiteListCheckAsyncTask? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sticker_pack_details)
+
         val showUpButton = intent.getBooleanExtra(EXTRA_SHOW_UP_BUTTON, false)
         stickerPack = intent.getParcelableExtra(EXTRA_STICKER_PACK_DATA)
         val packNameTextView = findViewById<TextView>(R.id.pack_name)
@@ -51,21 +55,47 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
         recyclerView?.addOnScrollListener(dividerScrollListener)
         divider = findViewById(R.id.divider)
         if (stickerPreviewAdapter == null) {
-            stickerPreviewAdapter = StickerPreviewAdapter(layoutInflater, R.drawable.sticker_error, resources.getDimensionPixelSize(R.dimen.sticker_pack_details_image_size), resources.getDimensionPixelSize(R.dimen.sticker_pack_details_image_padding), stickerPack!!)
+            stickerPreviewAdapter = StickerPreviewAdapter(
+                layoutInflater,
+                R.drawable.sticker_error,
+                resources.getDimensionPixelSize(R.dimen.sticker_pack_details_image_size),
+                resources.getDimensionPixelSize(R.dimen.sticker_pack_details_image_padding),
+                stickerPack!!
+            )
             recyclerView?.adapter = stickerPreviewAdapter
         }
         packNameTextView.text = stickerPack?.name
         packPublisherTextView.text = stickerPack?.publisher
-        packTrayIcon.setImageURI(getStickerAssetUri(stickerPack?.identifier, stickerPack?.trayImageFile))
+        packTrayIcon.setImageURI(
+            getStickerAssetUri(
+                stickerPack?.identifier,
+                stickerPack?.trayImageFile
+            )
+        )
         packSizeTextView.text = Formatter.formatShortFileSize(this, stickerPack!!.totalSize)
-        addButton?.setOnClickListener { v: View? -> addStickerPackToWhatsApp(stickerPack!!.identifier, stickerPack!!.name) }
+        addButton?.setOnClickListener { v: View? ->
+            addStickerPackToWhatsApp(
+                stickerPack!!.identifier,
+                stickerPack!!.name
+            )
+        }
         if (supportActionBar != null) {
             supportActionBar!!.setDisplayHomeAsUpEnabled(showUpButton)
-            supportActionBar!!.title = if (showUpButton) resources.getString(R.string.title_activity_sticker_pack_details_multiple_pack) else resources.getQuantityString(R.plurals.title_activity_sticker_packs_list, 1)
+            supportActionBar!!.title =
+                if (showUpButton) resources.getString(R.string.title_activity_sticker_pack_details_multiple_pack) else resources.getQuantityString(
+                    R.plurals.title_activity_sticker_packs_list,
+                    1
+                )
         }
     }
 
-    private fun launchInfoActivity(publisherWebsite: String, publisherEmail: String, privacyPolicyWebsite: String, licenseAgreementWebsite: String, trayIconUriString: String) {
+    private fun launchInfoActivity(
+        publisherWebsite: String,
+        publisherEmail: String,
+        privacyPolicyWebsite: String,
+        licenseAgreementWebsite: String,
+        trayIconUriString: String
+    ) {
         val intent = Intent(this@StickerPackDetailsActivity, StickerPackInfoActivity::class.java)
         intent.putExtra(EXTRA_STICKER_PACK_ID, stickerPack!!.identifier)
         intent.putExtra(EXTRA_STICKER_PACK_WEBSITE, publisherWebsite)
@@ -83,14 +113,25 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         if (item.itemId == R.id.action_info && stickerPack != null) {
-            val trayIconUri = getStickerAssetUri(stickerPack!!.identifier, stickerPack!!.trayImageFile)
-            launchInfoActivity(stickerPack!!.publisherWebsite, stickerPack!!.publisherEmail, stickerPack!!.privacyPolicyWebsite, stickerPack!!.licenseAgreementWebsite, trayIconUri.toString())
+            val trayIconUri =
+                getStickerAssetUri(stickerPack!!.identifier, stickerPack!!.trayImageFile)
+            launchInfoActivity(
+                stickerPack!!.publisherWebsite,
+                stickerPack!!.publisherEmail,
+                stickerPack!!.privacyPolicyWebsite,
+                stickerPack!!.licenseAgreementWebsite,
+                trayIconUri.toString()
+            )
             return true
         }
         return super.onOptionsItemSelected(item)
     }
 
-    private val pageLayoutListener = OnGlobalLayoutListener { setNumColumns(recyclerView!!.width / recyclerView!!.context.resources.getDimensionPixelSize(R.dimen.sticker_pack_details_image_size)) }
+    private val pageLayoutListener = OnGlobalLayoutListener {
+        setNumColumns(
+            recyclerView!!.width / recyclerView!!.context.resources.getDimensionPixelSize(R.dimen.sticker_pack_details_image_size)
+        )
+    }
 
     private fun setNumColumns(numColumns: Int) {
         if (this.numColumns != numColumns) {
@@ -102,24 +143,25 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
         }
     }
 
-    private val dividerScrollListener: RecyclerView.OnScrollListener = object : RecyclerView.OnScrollListener() {
-        override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-            super.onScrollStateChanged(recyclerView, newState)
-            updateDivider(recyclerView)
-        }
+    private val dividerScrollListener: RecyclerView.OnScrollListener =
+        object : RecyclerView.OnScrollListener() {
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                super.onScrollStateChanged(recyclerView, newState)
+                updateDivider(recyclerView)
+            }
 
-        override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-            super.onScrolled(recyclerView, dx, dy)
-            updateDivider(recyclerView)
-        }
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                super.onScrolled(recyclerView, dx, dy)
+                updateDivider(recyclerView)
+            }
 
-        private fun updateDivider(recyclerView: RecyclerView) {
-            val showDivider = recyclerView.computeVerticalScrollOffset() > 0
-            if (divider != null) {
-                divider!!.visibility = if (showDivider) View.VISIBLE else View.INVISIBLE
+            private fun updateDivider(recyclerView: RecyclerView) {
+                val showDivider = recyclerView.computeVerticalScrollOffset() > 0
+                if (divider != null) {
+                    divider!!.visibility = if (showDivider) View.VISIBLE else View.INVISIBLE
+                }
             }
         }
-    }
 
     override fun onResume() {
         super.onResume()
@@ -144,12 +186,15 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
         }
     }
 
-    internal class WhiteListCheckAsyncTask(stickerPackListActivity: StickerPackDetailsActivity) : AsyncTask<StickerPack?, Void?, Boolean>() {
-        private val stickerPackDetailsActivityWeakReference: WeakReference<StickerPackDetailsActivity> = WeakReference(stickerPackListActivity)
+    internal class WhiteListCheckAsyncTask(stickerPackListActivity: StickerPackDetailsActivity) :
+        AsyncTask<StickerPack?, Void?, Boolean>() {
+        private val stickerPackDetailsActivityWeakReference: WeakReference<StickerPackDetailsActivity> =
+            WeakReference(stickerPackListActivity)
+
         override fun doInBackground(vararg stickerPacks: StickerPack?): Boolean {
             val stickerPack = stickerPacks[0]
             val stickerPackDetailsActivity = stickerPackDetailsActivityWeakReference.get()
-                    ?: return false
+                ?: return false
             return isWhitelisted(stickerPackDetailsActivity, stickerPack!!.identifier)
         }
 
@@ -161,9 +206,6 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
     }
 
     companion object {
-        /**
-         * Do not change below values of below 3 lines as this is also used by WhatsApp
-         */
         const val EXTRA_STICKER_PACK_ID = "sticker_pack_id"
         const val EXTRA_STICKER_PACK_AUTHORITY = "sticker_pack_authority"
         const val EXTRA_STICKER_PACK_NAME = "sticker_pack_name"

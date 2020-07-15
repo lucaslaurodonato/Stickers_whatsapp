@@ -12,11 +12,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
 class StickerPreviewAdapter internal constructor(
-        private val layoutInflater: LayoutInflater,
-        private val errorResource: Int,
-        private val cellSize: Int,
-        private val cellPadding: Int,
-        private val stickerPack: StickerPack) : RecyclerView.Adapter<StickerPreviewViewHolder>() {
+    private val layoutInflater: LayoutInflater,
+    private val errorResource: Int,
+    private val cellSize: Int,
+    private val cellPadding: Int,
+    private val stickerPack: StickerPack
+) : RecyclerView.Adapter<StickerPreviewViewHolder>() {
     private val cellLimit = 0
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): StickerPreviewViewHolder {
         val itemView = layoutInflater.inflate(R.layout.sticker_image_item, viewGroup, false)
@@ -31,7 +32,12 @@ class StickerPreviewAdapter internal constructor(
 
     override fun onBindViewHolder(stickerPreviewViewHolder: StickerPreviewViewHolder, i: Int) {
         stickerPreviewViewHolder.stickerPreviewView.setImageResource(errorResource)
-        stickerPreviewViewHolder.stickerPreviewView.setImageURI(StickerPackLoader.getStickerAssetUri(stickerPack.identifier, stickerPack.stickers[i].imageFileName))
+        stickerPreviewViewHolder.stickerPreviewView.setImageURI(
+            StickerPackLoader.getStickerAssetUri(
+                stickerPack.identifier,
+                stickerPack.stickers[i].imageFileName
+            )
+        )
     }
 
     override fun getItemCount(): Int {

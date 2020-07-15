@@ -22,6 +22,7 @@ import com.facebook.drawee.view.SimpleDraweeView
 import br.com.stickers.StickerPackLoader.getStickerAssetUri
 
 private class StickerPackListAdapter internal constructor(
+
     private var stickerPacks: List<StickerPack>,
     private val onAddButtonClickedListener: OnAddButtonClickedListener
 ) : RecyclerView.Adapter<StickerPackListItemViewHolder>() {

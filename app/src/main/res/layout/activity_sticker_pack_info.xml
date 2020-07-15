@@ -18,23 +18,23 @@
             android:id="@+id/tray_icon"
             style="@style/InfoButtonStyle"
             android:clickable="false"
+            android:drawableStart="@drawable/ic_globo"
+            android:drawableLeft="@drawable/ic_globo"
             android:text="@string/info_screen_tray_icon"
-            android:textColor="#B9B9B9"
-            tools:drawableLeft="@drawable/sticker_3rdparty_web"
-            tools:drawableStart="@drawable/sticker_3rdparty_web" />
+            android:textColor="#B9B9B9" />
 
         <TextView
             android:id="@+id/view_webpage"
             style="@style/InfoButtonStyle"
-            android:drawableStart="@drawable/sticker_3rdparty_web"
-            android:drawableLeft="@drawable/sticker_3rdparty_web"
+            android:drawableStart="@drawable/ic_linkedin"
+            android:drawableLeft="@drawable/ic_linkedin"
             android:text="@string/view_webpage" />
 
         <TextView
             android:id="@+id/send_email"
             style="@style/InfoButtonStyle"
-            android:drawableStart="@drawable/sticker_3rdparty_email"
-            android:drawableLeft="@drawable/sticker_3rdparty_email"
+            android:drawableStart="@drawable/ic_email"
+            android:drawableLeft="@drawable/ic_email"
             android:text="@string/send_email" />
 
         <TextView

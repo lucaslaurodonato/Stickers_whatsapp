@@ -19,7 +19,7 @@
     <!-- Title of the sticker pack info page which displays the webpage, email and privacy policy of the sticker pack -->
     <string name="title_activity_sticker_pack_info">Info</string>
     <!-- Text of button that allows user to click to go to the webpage of the publisher -->
-    <string name="view_webpage">View webpage</string>
+    <string name="view_webpage">View developer linkedin</string>
     <!-- Text of button that allows user to click to send an email -->
     <string name="send_email">Send email</string>
     <!-- Text of button that allows user to click to go to the privacy policy website -->

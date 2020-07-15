@@ -26,10 +26,12 @@ class EntryActivity : BaseActivity() {
 
     private var progressBar: View? = null
     private var loadListAsyncTask: LoadListAsyncTask? = null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_entry)
         overridePendingTransition(0, 0)
+
         if (supportActionBar != null) {
             supportActionBar!!.hide()
         }
