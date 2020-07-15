@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">@android:color/transparent</color>
+    <color name="colorPrimaryDark">@color/black_translucent</color>
+    <color name="colorAccent">#128C7E</color>
+    <color name="inactiveAddButtonColor">#B3B3B3</color>
+    <color name="infoPageBackgroundColor">#EBEBEB</color>
+    <color name="actionBarArrowColor">@color/colorAccent</color>
+
+    <color name="white">#FFFFFF</color>
+    <color name="gallery">#ECECEC</color>
+
+    <color name="white_smoke">#F3F3F3</color>
+    <color name="snow">#F9F9F9</color>
+    <color name="whisper">#E9E9E9</color>
+    <color name="aluminium">#868F96</color>
+    <color name="greyButton">#868f96</color>
+    <color name="wild_sand">#F5F5F5</color>
+    <color name="mercury">#E2E2E2</color>
+    <color name="alto">#dcdcdc</color>
+    <color name="grey">#878787</color>
+    <color name="alabaster">#F9F9F9</color>
+    <color name="dark_gray">#A4A4A4</color>
+    <color name="transparent_mercury">#20E2E2E2</color>
+    <color name="dim_gray">#707070</color>
+    <color name="matterhorn">#4E4E4E</color>
+    <color name="tundora">#434343</color>
+    <color name="black">#000000</color>
+    <color name="black_translucent">#80000000</color>
+    <color name="black_80">#CC000000</color>
+
+    <color name="screaming_green">#73FD78</color>
+    <color name="bright_turquoise">#00FCD3</color>
+    <color name="transparent_bright_turquoise">#1000FCD3</color>
+    <color name="jungle_green">#1EBEA5</color>
+    <color name="dark_cyan">#E5FFCC</color>
+    <color name="whatsapp_green">#25d366</color>
+
+    <color name="facebook_blue">#4667ab</color>
+
+</resources>
