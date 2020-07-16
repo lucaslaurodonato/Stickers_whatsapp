@@ -22,6 +22,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.stickers.StickerPackLoader.getStickerAssetUri
 import br.com.stickers.WhitelistCheck.isWhitelisted
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import java.lang.ref.WeakReference
 
 class StickerPackDetailsActivity : AddStickerPackActivity() {
@@ -31,14 +34,19 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
     private var stickerPreviewAdapter: StickerPreviewAdapter? = null
     private var numColumns = 0
     private var addButton: View? = null
-    private var alreadyAddedText: View? = null
     private var stickerPack: StickerPack? = null
     private var divider: View? = null
     private var whiteListCheckAsyncTask: WhiteListCheckAsyncTask? = null
+    lateinit var adView: AdView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sticker_pack_details)
+
+        MobileAds.initialize(this) {}
+        adView = findViewById(R.id.adView)
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
 
         val showUpButton = intent.getBooleanExtra(EXTRA_SHOW_UP_BUTTON, false)
         stickerPack = intent.getParcelableExtra(EXTRA_STICKER_PACK_DATA)
@@ -179,10 +187,10 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
     private fun updateAddUI(isWhitelisted: Boolean) {
         if (isWhitelisted) {
             addButton!!.visibility = View.GONE
-            alreadyAddedText!!.visibility = View.VISIBLE
+//            alreadyAddedText!!.visibility = View.VISIBLE
         } else {
             addButton!!.visibility = View.VISIBLE
-            alreadyAddedText!!.visibility = View.GONE
+//            alreadyAddedText!!.visibility = View.GONE
         }
     }
 

@@ -14,6 +14,9 @@ import android.os.Bundle
 import android.util.Pair
 import android.view.View
 import android.widget.TextView
+import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.AdView
+import com.google.android.gms.ads.MobileAds
 import java.lang.ref.WeakReference
 import java.util.*
 import timber.log.Timber.d as log
