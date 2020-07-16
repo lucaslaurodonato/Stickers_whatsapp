@@ -5,6 +5,7 @@ import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import br.com.stickers.presentation.all.EntryActivity
 import br.com.stickers.R
+import br.com.stickers.mechanism.currency.SPLASH_TIME
 
 class SplashActivity : AppCompatActivity() {
 
@@ -14,6 +15,6 @@ class SplashActivity : AppCompatActivity() {
         Handler().postDelayed({
             startActivity(EntryActivity.getStartIntent(this))
             finish()
-        }, 3000.toLong())
+        }, SPLASH_TIME.toLong())
     }
 }

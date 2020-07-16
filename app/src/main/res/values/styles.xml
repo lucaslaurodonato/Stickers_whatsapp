@@ -10,7 +10,10 @@
     </style>
 
     <style name="AppTheme.Splash" parent="Theme.Design.NoActionBar">
-        <item name="android:windowFullscreen">true</item>
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="actionBarTheme">@style/MyApp.ActionBarTheme</item>
     </style>
 
     <style name="MyApp.ActionBarTheme" parent="@style/ThemeOverlay.MaterialComponents.ActionBar">
