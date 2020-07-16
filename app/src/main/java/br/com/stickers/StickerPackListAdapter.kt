@@ -28,6 +28,7 @@ private class StickerPackListAdapter internal constructor(
 ) : RecyclerView.Adapter<StickerPackListItemViewHolder>() {
     private var maxNumberOfStickersInARow = 0
     private var minMarginBetweenImages = 0
+
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): StickerPackListItemViewHolder {
         val context = viewGroup.context
         val layoutInflater = LayoutInflater.from(context)
@@ -81,7 +82,7 @@ private class StickerPackListAdapter internal constructor(
 
     private fun setAddButtonAppearance(addButton: ImageView, pack: StickerPack) {
         if (pack.isWhitelisted) {
-            addButton.setImageResource(R.drawable.ic_add_gradient)
+            addButton.setImageResource(R.drawable.ic_checked)
             addButton.isClickable = false
             addButton.setOnClickListener(null)
             setBackground(addButton, null)

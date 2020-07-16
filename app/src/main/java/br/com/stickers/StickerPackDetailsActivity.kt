@@ -47,13 +47,13 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
         val packTrayIcon = findViewById<ImageView>(R.id.tray_image)
         val packSizeTextView = findViewById<TextView>(R.id.pack_size)
         addButton = findViewById(R.id.add_to_whatsapp_button)
-        alreadyAddedText = findViewById(R.id.already_added_text)
+//        alreadyAddedText = findViewById(R.id.already_added_text)
         layoutManager = GridLayoutManager(this, 1)
         recyclerView = findViewById(R.id.sticker_list)
         recyclerView?.layoutManager = layoutManager
         recyclerView?.viewTreeObserver?.addOnGlobalLayoutListener(pageLayoutListener)
         recyclerView?.addOnScrollListener(dividerScrollListener)
-        divider = findViewById(R.id.divider)
+//        divider = findViewById(R.id.divider)
         if (stickerPreviewAdapter == null) {
             stickerPreviewAdapter = StickerPreviewAdapter(
                 layoutInflater,

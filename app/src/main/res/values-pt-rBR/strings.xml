@@ -6,6 +6,7 @@
     <string name="more_info_button">Mais dados sobre o pacote de figurinhas</string>
     <!-- Text to be shown on the button that user can click to add the sticker pack to WhatsApp -->
     <string name="add_to_whatsapp">Adicionar ao WhatsApp</string>
+    <string name="package_already_added">Adicionado</string>
     <!-- Content Description for the plus button shown on sticker pack list, that allows user to add sticker pack to WhatsApp -->
     <string name="add_button_content_description">Adicionar pacote de figurinhas ao WhatsApp</string>
     <!-- Title of the sticker pack page when there are multiple sticker packs in the app -->

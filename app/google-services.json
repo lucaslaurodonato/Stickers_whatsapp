@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "844418402131",
+    "firebase_url": "https://sticker-memes-74756.firebaseio.com",
+    "project_id": "sticker-memes-74756",
+    "storage_bucket": "sticker-memes-74756.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:844418402131:android:fa61b2be217e4b75fc03a6",
+        "android_client_info": {
+          "package_name": "br.com.stickers"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "844418402131-5j5pdjobor3sgjfku4nqplk1q3a8jf6t.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "br.com.stickers",
+            "certificate_hash": "455b2947b4b5749bf327d85cb2fe21614356e262"
+          }
+        },
+        {
+          "client_id": "844418402131-e0fe9erthfj4nv1o3nuao6mrs0d47j82.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw5y3ncDsrhymsrNa0rjK30YGU5lv-biE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "844418402131-e0fe9erthfj4nv1o3nuao6mrs0d47j82.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

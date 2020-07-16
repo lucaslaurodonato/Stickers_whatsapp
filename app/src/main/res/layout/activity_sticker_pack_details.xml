@@ -28,8 +28,7 @@
             android:contentDescription="@string/tray_image_content_description"
             android:src="@color/colorAccent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:src="@color/colorAccent" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/pack_name"
@@ -38,6 +37,7 @@
             android:layout_marginStart="@dimen/margin_from_tray_to_name"
             android:layout_marginLeft="@dimen/margin_from_tray_to_name"
             android:layout_marginTop="8dp"
+            android:textColor="@color/black_translucent"
             android:textSize="16sp"
             android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/tray_image"
@@ -67,75 +67,8 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1">
+    <include
+        android:id="@+id/recycler_sticker"
+        layout="@layout/include_layout_sticker" />
 
-        <br.com.stickers.BottomFadingRecyclerView
-            android:id="@+id/sticker_list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:clipToPadding="false"
-            android:fadingEdgeLength="@dimen/fading_edge_length"
-            android:paddingStart="@dimen/preview_side_margin"
-            android:paddingLeft="@dimen/preview_side_margin"
-            android:paddingEnd="@dimen/preview_side_margin"
-            android:paddingRight="@dimen/preview_side_margin"
-            android:requiresFadingEdge="vertical" />
-
-        <View
-            android:id="@+id/divider"
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:alpha="0.1"
-            android:background="@color/black_translucent" />
-
-    </FrameLayout>
-
-    <FrameLayout
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_marginStart="@dimen/preview_side_margin"
-        android:layout_marginLeft="@dimen/preview_side_margin"
-        android:layout_marginEnd="@dimen/preview_side_margin"
-        android:layout_marginRight="@dimen/preview_side_margin">
-
-        <TextView
-            android:id="@+id/already_added_text"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:text="@string/details_pack_already_added"
-            android:textColor="#9B9B9B"
-            android:textSize="14sp"
-            android:visibility="gone"
-            tools:visibility="visible" />
-
-        <FrameLayout
-            android:id="@+id/add_to_whatsapp_button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom"
-            android:background="@drawable/btn_green"
-            android:clickable="true"
-            android:focusable="true"
-            android:foreground="?attr/selectableItemBackgroundBorderless">
-
-            <TextView
-                style="@style/StickerPreviewButtonText"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:background="@android:color/transparent"
-                android:clickable="false"
-                android:drawableStart="@drawable/sticker_3rdparty_wa"
-                android:drawableLeft="@drawable/sticker_3rdparty_wa"
-                android:drawablePadding="8dp"
-                android:focusable="false"
-                android:foreground="@android:color/transparent"
-                android:text="@string/add_to_whatsapp" />
-        </FrameLayout>
-    </FrameLayout>
 </LinearLayout>

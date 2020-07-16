@@ -4,8 +4,8 @@
   "sticker_packs": [
     {
       "identifier": "1",
-      "name": "Snoomoji Pack 1",
-      "publisher": "Maven",
+      "name": "Reddit Pack 1",
+      "publisher": "Sticker Meme",
       "tray_image_file": "tray_tongue.png",
       "image_data_version": "1",
       "avoid_cache": false,
@@ -228,8 +228,8 @@
     },
     {
       "identifier": "2",
-      "name": "Snoomoji Pack 2",
-      "publisher": "Maven",
+      "name": "Reddit Pack 2",
+      "publisher": "Sticker Meme",
       "tray_image_file": "neutral_face_tray.png",
       "image_data_version": "1",
       "avoid_cache": false,
@@ -379,8 +379,8 @@
     },
     {
       "identifier": "3",
-      "name": "Snoomoji Pack 3",
-      "publisher": "Maven",
+      "name": "Reddit Pack 3",
+      "publisher": "Sticker Meme",
       "tray_image_file": "snoo_sad_tray.png",
       "image_data_version": "1",
       "avoid_cache": false,
