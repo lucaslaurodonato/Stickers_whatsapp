@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-package br.com.stickers;
+package br.com.stickers.presentation.all;
 
 import android.content.ContentProvider;
 import android.content.ContentResolver;
@@ -30,6 +30,9 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 import java.util.Objects;
+
+import br.com.stickers.BuildConfig;
+import br.com.stickers.data.type.Sticker;
 
 public class StickerContentProvider extends ContentProvider {
 

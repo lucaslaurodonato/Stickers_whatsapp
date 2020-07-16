@@ -5,13 +5,14 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
-package br.com.stickers
+package br.com.stickers.presentation.controller
 
 import android.view.View
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import br.com.stickers.R
 
 internal class StickerPackListItemViewHolder(val container: View) : RecyclerView.ViewHolder(container) {
     @JvmField

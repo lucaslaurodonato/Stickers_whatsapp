@@ -4,7 +4,7 @@
     package="br.com.stickers">
 
     <application
-        android:name=".StickerApplication"
+        android:name=".logging.StickerApplication"
         android:allowBackup="false"
         android:fullBackupContent="false"
         android:icon="@mipmap/ic_launcher"
@@ -24,27 +24,28 @@
         </activity>
 
         <activity
-            android:name=".EntryActivity"
-            android:parentActivityName=".StickerPackListActivity"
+            android:name=".presentation.all.EntryActivity"
+            android:parentActivityName=".presentation.all.StickerPackListActivity"
             tools:ignore="UnusedAttribute" />
 
-        <activity android:name=".StickerPackListActivity" />
+        <activity android:name=".presentation.all.StickerPackListActivity" />
         <activity
-            android:name=".StickerPackDetailsActivity"
-            android:parentActivityName=".StickerPackListActivity"
+            android:name=".presentation.all.StickerPackDetailsActivity"
+            android:parentActivityName=".presentation.all.StickerPackListActivity"
             tools:ignore="UnusedAttribute">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".StickerPackListActivity" />
+                android:value=".presentation.all.StickerPackListActivity" />
         </activity>
+
         <activity
-            android:name=".StickerPackInfoActivity"
+            android:name=".presentation.all.StickerPackInfoActivity"
             android:label="@string/title_activity_sticker_pack_info"
-            android:parentActivityName=".StickerPackDetailsActivity"
+            android:parentActivityName=".presentation.all.StickerPackDetailsActivity"
             tools:ignore="UnusedAttribute">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".StickerPackDetailsActivity" />
+                android:value=".presentation.all.StickerPackDetailsActivity" />
         </activity>
 
         <meta-data
@@ -52,7 +53,7 @@
             android:value="ca-app-pub-9308496284214694~3508386708"/>
 
         <provider
-            android:name=".StickerContentProvider"
+            android:name=".presentation.all.StickerContentProvider"
             android:authorities="${contentProviderAuthority}"
             android:enabled="true"
             android:exported="true"

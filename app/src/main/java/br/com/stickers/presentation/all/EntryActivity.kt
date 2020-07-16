@@ -5,15 +5,17 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
-package br.com.stickers
+package br.com.stickers.presentation.all
 
 import android.content.Context
 import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
 import android.util.Pair
-import android.view.View
-import android.widget.TextView
+import android.view.View.GONE
+import br.com.stickers.*
+import br.com.stickers.presentation.base.view.BaseActivity
+import kotlinx.android.synthetic.main.activity_entry.*
 import java.lang.ref.WeakReference
 import java.util.*
 import timber.log.Timber.d as log
@@ -24,54 +26,54 @@ class EntryActivity : BaseActivity() {
         fun getStartIntent(context: Context) = Intent(context, EntryActivity::class.java)
     }
 
-    private var progressBar: View? = null
     private var loadListAsyncTask: LoadListAsyncTask? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_entry)
-        overridePendingTransition(0, 0)
 
-        if (supportActionBar != null) {
-            supportActionBar!!.hide()
-        }
-        progressBar = findViewById(R.id.entry_activity_progress)
-        loadListAsyncTask = LoadListAsyncTask(this)
-        loadListAsyncTask!!.execute()
+        overridePendingTransition(0, 0)
+        loadListAsyncTask =
+            LoadListAsyncTask(this)
+        loadListAsyncTask?.execute()
     }
 
     private fun showStickerPack(stickerPackList: ArrayList<StickerPack>?) {
-        progressBar!!.visibility = View.GONE
+        entry_activity_progress.visibility = GONE
         if (stickerPackList!!.size > 1) {
-            val intent = Intent(this, StickerPackListActivity::class.java)
-            intent.putParcelableArrayListExtra(
-                StickerPackListActivity.EXTRA_STICKER_PACK_LIST_DATA,
-                stickerPackList
-            )
-            startActivity(intent)
-            finish()
-            overridePendingTransition(0, 0)
+            Intent(this, StickerPackListActivity::class.java).let {
+                it.putParcelableArrayListExtra(
+                    StickerPackListActivity.EXTRA_STICKER_PACK_LIST_DATA,
+                    stickerPackList
+                )
+                startActivity(it)
+                finish()
+                overridePendingTransition(0, 0)
+            }
         } else {
-            val intent = Intent(this, StickerPackDetailsActivity::class.java)
-            intent.putExtra(StickerPackDetailsActivity.EXTRA_SHOW_UP_BUTTON, false)
-            intent.putExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_DATA, stickerPackList[0])
-            startActivity(intent)
-            finish()
-            overridePendingTransition(0, 0)
+            Intent(this, StickerPackDetailsActivity::class.java).let {
+                it.putExtra(StickerPackDetailsActivity.EXTRA_SHOW_UP_BUTTON, false)
+                it.putExtra(
+                    StickerPackDetailsActivity.EXTRA_STICKER_PACK_DATA,
+                    stickerPackList[0]
+                )
+                startActivity(it)
+                finish()
+                overridePendingTransition(0, 0)
+            }
         }
     }
 
     private fun showErrorMessage(errorMessage: String?) {
-        progressBar!!.visibility = View.GONE
+        entry_activity_progress.visibility = GONE
         log("EntryActivity: error fetching sticker packs, $errorMessage")
-        val errorMessageTV = findViewById<TextView>(R.id.error_message)
-        errorMessageTV.text = getString(R.string.error_message, errorMessage)
+        error_message.text = getString(R.string.error_message, errorMessage)
     }
 
     override fun onDestroy() {
         super.onDestroy()
         if (loadListAsyncTask != null && !loadListAsyncTask!!.isCancelled) {
-            loadListAsyncTask!!.cancel(true)
+            loadListAsyncTask?.cancel(true)
         }
     }
 
@@ -83,12 +85,18 @@ class EntryActivity : BaseActivity() {
             return try {
                 val context: Context? = contextWeakReference.get()
                 if (context != null) {
-                    stickerPackList = StickerPackLoader.fetchStickerPacks(context)
+                    stickerPackList =
+                        StickerPackLoader.fetchStickerPacks(
+                            context
+                        )
                     if (stickerPackList.size == 0) {
                         return Pair("could not find any packs", null)
                     }
                     for (stickerPack in stickerPackList) {
-                        StickerPackValidator.verifyStickerPackValidity(context, stickerPack)
+                        StickerPackValidator.verifyStickerPackValidity(
+                            context,
+                            stickerPack
+                        )
                     }
                     Pair(null, stickerPackList)
                 } else {

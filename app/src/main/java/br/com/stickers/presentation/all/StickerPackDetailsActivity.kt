@@ -1,4 +1,4 @@
-package br.com.stickers
+package br.com.stickers.presentation.all
 
 import android.content.Context
 import android.content.Intent
@@ -9,8 +9,10 @@ import android.view.View
 import android.view.ViewTreeObserver.OnGlobalLayoutListener
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import br.com.stickers.StickerPackLoader.getStickerAssetUri
-import br.com.stickers.WhitelistCheck.isWhitelisted
+import br.com.stickers.R
+import br.com.stickers.presentation.all.StickerPackLoader.getStickerAssetUri
+import br.com.stickers.mechanism.validator.WhitelistCheck.isWhitelisted
+import br.com.stickers.mechanism.addStickerPack.AddStickerPackActivity
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_sticker_pack_details.*
@@ -20,9 +22,7 @@ import java.lang.ref.WeakReference
 class StickerPackDetailsActivity : AddStickerPackActivity() {
 
     companion object {
-        fun getStartIntent(context: Context) =
-            Intent(context, StickerPackDetailsActivity::class.java)
-
+        fun getStartIntent(context: Context) = Intent(context, StickerPackDetailsActivity::class.java)
         const val EXTRA_STICKER_PACK_ID = "sticker_pack_id"
         const val EXTRA_STICKER_PACK_AUTHORITY = "sticker_pack_authority"
         const val EXTRA_STICKER_PACK_NAME = "sticker_pack_name"
@@ -53,7 +53,10 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
 
     override fun onResume() {
         super.onResume()
-        whiteListCheckAsyncTask = WhiteListCheckAsyncTask(this)
+        whiteListCheckAsyncTask =
+            WhiteListCheckAsyncTask(
+                this
+            )
         whiteListCheckAsyncTask?.execute(stickerPack)
     }
 
@@ -71,13 +74,14 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
         recyclerView?.viewTreeObserver?.addOnGlobalLayoutListener(pageLayoutListener)
 
         if (stickerPreviewAdapter == null) {
-            stickerPreviewAdapter = StickerPreviewAdapter(
-                layoutInflater,
-                R.drawable.sticker_error,
-                resources.getDimensionPixelSize(R.dimen.sticker_pack_details_image_size),
-                resources.getDimensionPixelSize(R.dimen.sticker_pack_details_image_padding),
-                stickerPack!!
-            )
+            stickerPreviewAdapter =
+                StickerPreviewAdapter(
+                    layoutInflater,
+                    R.drawable.sticker_error,
+                    resources.getDimensionPixelSize(R.dimen.sticker_pack_details_image_size),
+                    resources.getDimensionPixelSize(R.dimen.sticker_pack_details_image_padding),
+                    stickerPack!!
+                )
             recyclerView?.adapter = stickerPreviewAdapter
         }
         pack_name.text = stickerPack?.name
@@ -100,7 +104,9 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
 
     private val pageLayoutListener = OnGlobalLayoutListener {
         setNumColumns(
-            recyclerView!!.width / recyclerView!!.context.resources.getDimensionPixelSize(R.dimen.sticker_pack_details_image_size)
+            recyclerView!!.width / recyclerView!!.context.resources.getDimensionPixelSize(
+                R.dimen.sticker_pack_details_image_size
+            )
         )
     }
 
@@ -144,15 +150,12 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
     }
 
     private fun startLaunchInfoActivity() {
-        val trayIconUri =
-            getStickerAssetUri(stickerPack?.identifier, stickerPack?.trayImageFile)
         if (stickerPack != null) {
             launchInfoActivity(
                 stickerPack!!.publisherWebsite,
                 stickerPack!!.publisherEmail,
                 stickerPack!!.privacyPolicyWebsite,
-                stickerPack!!.licenseAgreementWebsite,
-                trayIconUri.toString()
+                stickerPack!!.licenseAgreementWebsite
             )
         }
     }
@@ -161,8 +164,7 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
         publisherWebsite: String,
         publisherEmail: String,
         privacyPolicyWebsite: String,
-        licenseAgreementWebsite: String,
-        trayIconUriString: String
+        licenseAgreementWebsite: String
     ) {
         Intent(this@StickerPackDetailsActivity, StickerPackInfoActivity::class.java).let {
             it.putExtra(EXTRA_STICKER_PACK_ID, stickerPack?.identifier)
@@ -170,7 +172,6 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
             it.putExtra(EXTRA_STICKER_PACK_EMAIL, publisherEmail)
             it.putExtra(EXTRA_STICKER_PACK_PRIVACY_POLICY, privacyPolicyWebsite)
             it.putExtra(EXTRA_STICKER_PACK_LICENSE_AGREEMENT, licenseAgreementWebsite)
-            it.putExtra(EXTRA_STICKER_PACK_TRAY_ICON, trayIconUriString)
             startActivity(it)
         }
     }

@@ -6,12 +6,14 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-package br.com.stickers;
+package br.com.stickers.presentation.all;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 import java.util.List;
+
+import br.com.stickers.data.type.Sticker;
 
 class StickerPack implements Parcelable {
     public static final Creator<StickerPack> CREATOR = new Creator<StickerPack>() {

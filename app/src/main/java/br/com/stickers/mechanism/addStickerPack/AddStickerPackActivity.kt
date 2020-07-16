@@ -5,7 +5,7 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
-package br.com.stickers
+package br.com.stickers.mechanism.addStickerPack
 
 import android.app.Activity
 import android.app.Dialog
@@ -17,24 +17,38 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.DialogFragment
-import br.com.stickers.BaseActivity.MessageDialogFragment.Companion.newInstance
+import br.com.stickers.*
+import br.com.stickers.presentation.base.view.BaseActivity.MessageDialogFragment.Companion.newInstance
+import br.com.stickers.mechanism.validator.WhitelistCheck
+import br.com.stickers.presentation.all.StickerPackDetailsActivity
+import br.com.stickers.presentation.base.view.BaseActivity
 import timber.log.Timber.d as log
 
 abstract class AddStickerPackActivity : BaseActivity() {
+
     protected fun addStickerPackToWhatsApp(identifier: String, stickerPackName: String) {
         try {
             //if neither WhatsApp Consumer or WhatsApp Business is installed, then tell user to install the apps.
-            if (!WhitelistCheck.isWhatsAppConsumerAppInstalled(packageManager) && !WhitelistCheck.isWhatsAppSmbAppInstalled(
+            if (!WhitelistCheck.isWhatsAppConsumerAppInstalled(
+                    packageManager
+                ) && !WhitelistCheck.isWhatsAppSmbAppInstalled(
                     packageManager
                 )
             ) {
-                Toast.makeText(this, R.string.add_pack_fail_prompt_update_whatsapp, Toast.LENGTH_LONG).show()
+                Toast.makeText(this,
+                    R.string.add_pack_fail_prompt_update_whatsapp, Toast.LENGTH_LONG).show()
                 return
             }
             val stickerPackWhitelistedInWhatsAppConsumer =
-                WhitelistCheck.isStickerPackWhitelistedInWhatsAppConsumer(this, identifier)
+                WhitelistCheck.isStickerPackWhitelistedInWhatsAppConsumer(
+                    this,
+                    identifier
+                )
             val stickerPackWhitelistedInWhatsAppSmb =
-                WhitelistCheck.isStickerPackWhitelistedInWhatsAppSmb(this, identifier)
+                WhitelistCheck.isStickerPackWhitelistedInWhatsAppSmb(
+                    this,
+                    identifier
+                )
             if (!stickerPackWhitelistedInWhatsAppConsumer && !stickerPackWhitelistedInWhatsAppSmb) {
                 //ask users which app to add the pack to.
                 launchIntentToAddPackToChooser(identifier, stickerPackName)
@@ -47,11 +61,13 @@ abstract class AddStickerPackActivity : BaseActivity() {
                     WhitelistCheck.SMB_WHATSAPP_PACKAGE_NAME
                 )
             } else {
-                Toast.makeText(this, R.string.add_pack_fail_prompt_update_whatsapp, Toast.LENGTH_LONG).show()
+                Toast.makeText(this,
+                    R.string.add_pack_fail_prompt_update_whatsapp, Toast.LENGTH_LONG).show()
             }
         } catch (e: Exception) {
             log( "$TAG: error adding sticker pack to WhatsApp. Exception: $e")
-            Toast.makeText(this, R.string.add_pack_fail_prompt_update_whatsapp, Toast.LENGTH_LONG).show()
+            Toast.makeText(this,
+                R.string.add_pack_fail_prompt_update_whatsapp, Toast.LENGTH_LONG).show()
         }
     }
 
@@ -59,9 +75,12 @@ abstract class AddStickerPackActivity : BaseActivity() {
         val intent = createIntentToAddStickerPack(identifier, stickerPackName)
         intent.setPackage(whatsappPackageName)
         try {
-            startActivityForResult(intent, ADD_PACK)
+            startActivityForResult(intent,
+                ADD_PACK
+            )
         } catch (e: ActivityNotFoundException) {
-            Toast.makeText(this, R.string.add_pack_fail_prompt_update_whatsapp, Toast.LENGTH_LONG).show()
+            Toast.makeText(this,
+                R.string.add_pack_fail_prompt_update_whatsapp, Toast.LENGTH_LONG).show()
         }
     }
 
@@ -69,9 +88,12 @@ abstract class AddStickerPackActivity : BaseActivity() {
     private fun launchIntentToAddPackToChooser(identifier: String, stickerPackName: String) {
         val intent = createIntentToAddStickerPack(identifier, stickerPackName)
         try {
-            startActivityForResult(Intent.createChooser(intent, getString(R.string.add_to_whatsapp)), ADD_PACK)
+            startActivityForResult(Intent.createChooser(intent, getString(R.string.add_to_whatsapp)),
+                ADD_PACK
+            )
         } catch (e: ActivityNotFoundException) {
-            Toast.makeText(this, R.string.add_pack_fail_prompt_update_whatsapp, Toast.LENGTH_LONG).show()
+            Toast.makeText(this,
+                R.string.add_pack_fail_prompt_update_whatsapp, Toast.LENGTH_LONG).show()
         }
     }
 
@@ -79,7 +101,10 @@ abstract class AddStickerPackActivity : BaseActivity() {
         val intent = Intent()
         intent.action = "com.whatsapp.intent.action.ENABLE_STICKER_PACK"
         intent.putExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_ID, identifier)
-        intent.putExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_AUTHORITY, BuildConfig.CONTENT_PROVIDER_AUTHORITY)
+        intent.putExtra(
+            StickerPackDetailsActivity.EXTRA_STICKER_PACK_AUTHORITY,
+            BuildConfig.CONTENT_PROVIDER_AUTHORITY
+        )
         intent.putExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_NAME, stickerPackName)
         return intent
     }
@@ -98,7 +123,8 @@ abstract class AddStickerPackActivity : BaseActivity() {
                         log("$TAG: Validation failed:$validationError")
                     }
                 } else {
-                    StickerPackNotAddedMessageFragment().show(supportFragmentManager, "sticker_pack_not_added")
+                    StickerPackNotAddedMessageFragment()
+                        .show(supportFragmentManager, "sticker_pack_not_added")
                 }
             }
         }
@@ -117,14 +143,16 @@ abstract class AddStickerPackActivity : BaseActivity() {
         private fun launchWhatsAppPlayStorePage() {
             if (activity != null) {
                 val packageManager = activity!!.packageManager
-                val whatsAppInstalled = WhitelistCheck.isPackageInstalled(
-                    WhitelistCheck.CONSUMER_WHATSAPP_PACKAGE_NAME,
-                    packageManager
-                )
-                val smbAppInstalled = WhitelistCheck.isPackageInstalled(
-                    WhitelistCheck.SMB_WHATSAPP_PACKAGE_NAME,
-                    packageManager
-                )
+                val whatsAppInstalled =
+                    WhitelistCheck.isPackageInstalled(
+                        WhitelistCheck.CONSUMER_WHATSAPP_PACKAGE_NAME,
+                        packageManager
+                    )
+                val smbAppInstalled =
+                    WhitelistCheck.isPackageInstalled(
+                        WhitelistCheck.SMB_WHATSAPP_PACKAGE_NAME,
+                        packageManager
+                    )
                 val playPackageLinkPrefix = "http://play.google.com/store/apps/details?id="
                 if (whatsAppInstalled && smbAppInstalled) {
                     launchPlayStoreWithUri("https://play.google.com/store/apps/developer?id=WhatsApp+Inc.")
@@ -143,7 +171,8 @@ abstract class AddStickerPackActivity : BaseActivity() {
             try {
                 startActivity(intent)
             } catch (e: ActivityNotFoundException) {
-                Toast.makeText(activity, R.string.cannot_find_play_store, Toast.LENGTH_LONG).show()
+                Toast.makeText(activity,
+                    R.string.cannot_find_play_store, Toast.LENGTH_LONG).show()
             }
         }
     }

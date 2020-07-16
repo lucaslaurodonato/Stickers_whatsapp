@@ -3,7 +3,6 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    //the compression of webp file during build causes problem with FileDescriptor in ContentProvider.
     aaptOptions {
         noCompress "webp"
     }
@@ -12,12 +11,13 @@ android {
 
     defaultConfig {
         applicationId "br.com.stickers"
-        minSdkVersion 16
+        minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
         def contentProviderAuthority = applicationId + ".stickercontentprovider"
         // Creates a placeholder property to use in the manifest.
         manifestPlaceholders =
@@ -51,37 +51,50 @@ android {
     }
     buildToolsVersion = '29.0.3'
 
+    sourceSets {
+        main {
+            java.srcDirs += 'src/main/java'
+            // List and include all res-* folders
+            file('src/main/').listFiles().each {
+                if (it.isDirectory() && it.name.contains('res')) {
+                    res.srcDirs += it.path
+                }
+            }
+        }
+    }
+
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
-    implementation 'androidx.core:core-ktx:1.3.0'
-    implementation 'com.google.android.material:material:1.1.0'
-    implementation 'androidx.appcompat:appcompat:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation "androidx.core:core-ktx:1.3.0"
-    implementation 'com.android.support:multidex:1.0.3'
 
-    def fresco_version = '2.2.0'
+    //Google Components
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "com.google.android.material:material:$googleComponent"
+    implementation "androidx.appcompat:appcompat:$googleComponent"
+    implementation "androidx.constraintlayout:constraintlayout:$googleComponent"
+    implementation "androidx.recyclerview:recyclerview:$googleComponent"
+    implementation "androidx.core:core-ktx:$core"
+    implementation "com.android.support:multidex:$multidex"
+
+    //Fresco
     implementation "com.facebook.fresco:fresco:$fresco_version"
     implementation "com.facebook.fresco:webpsupport:$fresco_version"
     implementation "com.facebook.fresco:animated-webp:$fresco_version"
     implementation "com.facebook.fresco:animated-base:$fresco_version"
-    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:1.3.72"
 
     // Firebase
-    implementation 'com.google.firebase:firebase-analytics:17.4.4'
-    implementation 'com.google.firebase:firebase-crashlytics:17.1.1'
-    implementation 'com.google.firebase:firebase-ads:19.2.0'
+    implementation "com.google.firebase:firebase-analytics:$analytics"
+    implementation "com.google.firebase:firebase-crashlytics:$crashlytics"
+    implementation "com.google.firebase:firebase-ads:$ads"
 
     // Debug
-    api 'com.jakewharton.timber:timber:4.7.1'
+    api "com.jakewharton.timber:timber:$timber"
 
-    testImplementation 'junit:junit:4.13'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    //Test
+    testImplementation "junit:junit:$junit"
+    androidTestImplementation "androidx.test.ext:junit:$jUnit"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso"
 
 }
 repositories {

@@ -73,7 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/author"
         tools:text="Size" />
 
-    <br.com.stickers.BottomFadingRecyclerView
+    <br.com.stickers.mechanism.bottomRecycler.BottomFadingRecyclerView
         android:id="@+id/sticker_list"
         android:layout_width="0dp"
         android:layout_height="0dp"

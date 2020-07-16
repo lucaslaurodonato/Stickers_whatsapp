@@ -5,11 +5,13 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
-package br.com.stickers
+package br.com.stickers.presentation.all
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import br.com.stickers.R
+import br.com.stickers.presentation.controller.StickerPreviewViewHolder
 
 class StickerPreviewAdapter internal constructor(
 
@@ -23,7 +25,10 @@ class StickerPreviewAdapter internal constructor(
     private val cellLimit = 0
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): StickerPreviewViewHolder {
         val itemView = layoutInflater.inflate(R.layout.sticker_image_item, viewGroup, false)
-        val vh = StickerPreviewViewHolder(itemView)
+        val vh =
+            StickerPreviewViewHolder(
+                itemView
+            )
         val layoutParams = vh.stickerPreviewView.layoutParams
         layoutParams.height = cellSize
         layoutParams.width = cellSize

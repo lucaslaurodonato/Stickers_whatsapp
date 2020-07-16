@@ -5,7 +5,7 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
-package br.com.stickers
+package br.com.stickers.presentation.all
 
 import android.content.Intent
 import android.graphics.drawable.Drawable
@@ -18,8 +18,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
+import br.com.stickers.R
 import com.facebook.drawee.view.SimpleDraweeView
-import br.com.stickers.StickerPackLoader.getStickerAssetUri
+import br.com.stickers.presentation.all.StickerPackLoader.getStickerAssetUri
+import br.com.stickers.presentation.controller.StickerPackListItemViewHolder
 
 private class StickerPackListAdapter internal constructor(
 
@@ -34,7 +36,9 @@ private class StickerPackListAdapter internal constructor(
         val layoutInflater = LayoutInflater.from(context)
         val stickerPackRow =
             layoutInflater.inflate(R.layout.sticker_packs_list_item, viewGroup, false)
-        return StickerPackListItemViewHolder(stickerPackRow)
+        return StickerPackListItemViewHolder(
+            stickerPackRow
+        )
     }
 
     override fun onBindViewHolder(viewHolder: StickerPackListItemViewHolder, index: Int) {

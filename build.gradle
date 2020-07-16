@@ -1,14 +1,20 @@
 // Top-level build file where you can add configuration options common to all sub-projects/modules.
 buildscript {
-    ext.kotlin_version = "1.3.72"
+
+    ext {
+        kotlin_version = "1.3.72"
+        gmsVersion = '4.3.3'
+        androidPluginForGradleVersion = '4.0.1'
+    }
+
     repositories {
         google()
         jcenter()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:4.0.0"
+        classpath "com.google.gms:google-services:$gmsVersion"
+        classpath "com.android.tools.build:gradle:$androidPluginForGradleVersion"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
-        classpath "com.android.tools.build:gradle:3.6.3"
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -19,6 +25,31 @@ allprojects {
         google()
         jcenter()
     }
+}
+
+ext {
+
+    //Google Components
+    googleComponent = "1.1.0"
+    core = "1.3.0"
+    multidex = "1.0.3"
+
+    //Firebase
+    analytics = "17.4.4"
+    crashlytics = "17.1.1"
+    ads = "19.2.0"
+
+    //Fresco
+    fresco_version = '2.2.0'
+
+    //Debug
+    timber = "4.7.1"
+
+    //test
+    junit = "4.13"
+    jUnit = "1.1.1"
+    espresso = "3.2.0"
+
 }
 
 task clean(type: Delete) {

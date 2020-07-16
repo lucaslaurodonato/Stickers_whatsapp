@@ -3,7 +3,7 @@ package br.com.stickers.presentation.splash.view
 import android.os.Bundle
 import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
-import br.com.stickers.EntryActivity
+import br.com.stickers.presentation.all.EntryActivity
 import br.com.stickers.R
 
 class SplashActivity : AppCompatActivity() {

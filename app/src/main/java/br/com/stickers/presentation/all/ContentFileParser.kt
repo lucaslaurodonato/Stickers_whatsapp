@@ -5,10 +5,11 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
-package br.com.stickers
+package br.com.stickers.presentation.all
 
 import android.text.TextUtils
 import android.util.JsonReader
+import br.com.stickers.data.type.Sticker
 import java.io.IOException
 import java.io.InputStream
 import java.io.InputStreamReader
@@ -20,7 +21,11 @@ internal object ContentFileParser {
     @JvmStatic
     @Throws(IOException::class, IllegalStateException::class)
     fun parseStickerPacks(contentsInputStream: InputStream): List<StickerPack> {
-        JsonReader(InputStreamReader(contentsInputStream)).use { reader -> return readStickerPacks(reader) }
+        JsonReader(InputStreamReader(contentsInputStream)).use { reader ->
+            return readStickerPacks(
+                reader
+            )
+        }
     }
 
     @Throws(IOException::class, IllegalStateException::class)
@@ -38,7 +43,10 @@ internal object ContentFileParser {
             } else if ("sticker_packs" == key) {
                 reader.beginArray()
                 while (reader.hasNext()) {
-                    val stickerPack = readStickerPack(reader)
+                    val stickerPack =
+                        readStickerPack(
+                            reader
+                        )
                     stickerPackList.add(stickerPack)
                 }
                 reader.endArray()
@@ -80,7 +88,10 @@ internal object ContentFileParser {
                 "publisher_website" -> publisherWebsite = reader.nextString()
                 "privacy_policy_website" -> privacyPolicyWebsite = reader.nextString()
                 "license_agreement_website" -> licenseAgreementWebsite = reader.nextString()
-                "stickers" -> stickerList = readStickers(reader)
+                "stickers" -> stickerList =
+                    readStickers(
+                        reader
+                    )
                 "image_data_version" -> imageDataVersion = reader.nextString()
                 "avoid_cache" -> avoidCache = reader.nextBoolean()
                 else -> reader.skipValue()
@@ -94,7 +105,18 @@ internal object ContentFileParser {
         check(!(identifier!!.contains("..") || identifier.contains("/"))) { "identifier should not contain .. or / to prevent directory traversal" }
         check(!TextUtils.isEmpty(imageDataVersion)) { "image_data_version should not be empty" }
         reader.endObject()
-        val stickerPack = StickerPack(identifier, name, publisher, trayImageFile, publisherEmail, publisherWebsite, privacyPolicyWebsite, licenseAgreementWebsite, imageDataVersion, avoidCache)
+        val stickerPack = StickerPack(
+            identifier,
+            name,
+            publisher,
+            trayImageFile,
+            publisherEmail,
+            publisherWebsite,
+            privacyPolicyWebsite,
+            licenseAgreementWebsite,
+            imageDataVersion,
+            avoidCache
+        )
         stickerPack.stickers = stickerList
         return stickerPack
     }
