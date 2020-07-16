@@ -12,11 +12,13 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
 class StickerPreviewAdapter internal constructor(
+
     private val layoutInflater: LayoutInflater,
     private val errorResource: Int,
     private val cellSize: Int,
     private val cellPadding: Int,
     private val stickerPack: StickerPack
+
 ) : RecyclerView.Adapter<StickerPreviewViewHolder>() {
     private val cellLimit = 0
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): StickerPreviewViewHolder {

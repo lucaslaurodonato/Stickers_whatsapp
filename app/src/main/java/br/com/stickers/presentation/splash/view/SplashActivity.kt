@@ -1,4 +1,4 @@
-package br.com.stickers.splash.view
+package br.com.stickers.presentation.splash.view
 
 import android.os.Bundle
 import android.os.Handler

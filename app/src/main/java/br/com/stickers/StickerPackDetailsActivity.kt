@@ -1,10 +1,3 @@
-/*
- * Copyright (c) WhatsApp Inc. and its affiliates.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree.
- */
 package br.com.stickers
 
 import android.content.Context
@@ -12,56 +5,71 @@ import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
 import android.text.format.Formatter
-import android.view.Menu
-import android.view.MenuItem
 import android.view.View
 import android.view.ViewTreeObserver.OnGlobalLayoutListener
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.stickers.StickerPackLoader.getStickerAssetUri
 import br.com.stickers.WhitelistCheck.isWhitelisted
 import com.google.android.gms.ads.AdRequest
-import com.google.android.gms.ads.AdView
 import com.google.android.gms.ads.MobileAds
+import kotlinx.android.synthetic.main.activity_sticker_pack_details.*
+import kotlinx.android.synthetic.main.include_toolbar.view.*
 import java.lang.ref.WeakReference
 
 class StickerPackDetailsActivity : AddStickerPackActivity() {
+
+    companion object {
+        fun getStartIntent(context: Context) =
+            Intent(context, StickerPackDetailsActivity::class.java)
+
+        const val EXTRA_STICKER_PACK_ID = "sticker_pack_id"
+        const val EXTRA_STICKER_PACK_AUTHORITY = "sticker_pack_authority"
+        const val EXTRA_STICKER_PACK_NAME = "sticker_pack_name"
+        const val EXTRA_STICKER_PACK_WEBSITE = "sticker_pack_website"
+        const val EXTRA_STICKER_PACK_EMAIL = "sticker_pack_email"
+        const val EXTRA_STICKER_PACK_PRIVACY_POLICY = "sticker_pack_privacy_policy"
+        const val EXTRA_STICKER_PACK_LICENSE_AGREEMENT = "sticker_pack_license_agreement"
+        const val EXTRA_STICKER_PACK_TRAY_ICON = "sticker_pack_tray_icon"
+        const val EXTRA_SHOW_UP_BUTTON = "show_up_button"
+        const val EXTRA_STICKER_PACK_DATA = "sticker_pack"
+    }
 
     private var recyclerView: RecyclerView? = null
     private var layoutManager: GridLayoutManager? = null
     private var stickerPreviewAdapter: StickerPreviewAdapter? = null
     private var numColumns = 0
-    private var addButton: View? = null
     private var stickerPack: StickerPack? = null
-    private var divider: View? = null
     private var whiteListCheckAsyncTask: WhiteListCheckAsyncTask? = null
-    lateinit var adView: AdView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sticker_pack_details)
-
-        MobileAds.initialize(this) {}
-        adView = findViewById(R.id.adView)
-        val adRequest = AdRequest.Builder().build()
-        adView.loadAd(adRequest)
-
-        val showUpButton = intent.getBooleanExtra(EXTRA_SHOW_UP_BUTTON, false)
         stickerPack = intent.getParcelableExtra(EXTRA_STICKER_PACK_DATA)
-        val packNameTextView = findViewById<TextView>(R.id.pack_name)
-        val packPublisherTextView = findViewById<TextView>(R.id.author)
-        val packTrayIcon = findViewById<ImageView>(R.id.tray_image)
-        val packSizeTextView = findViewById<TextView>(R.id.pack_size)
-        addButton = findViewById(R.id.add_to_whatsapp_button)
-//        alreadyAddedText = findViewById(R.id.already_added_text)
+        setupAdMob()
+        setupToolbar()
+        setupRecyclerView()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        whiteListCheckAsyncTask = WhiteListCheckAsyncTask(this)
+        whiteListCheckAsyncTask?.execute(stickerPack)
+    }
+
+    override fun onPause() {
+        super.onPause()
+        if (whiteListCheckAsyncTask != null && !whiteListCheckAsyncTask!!.isCancelled) {
+            whiteListCheckAsyncTask?.cancel(true)
+        }
+    }
+
+    private fun setupRecyclerView() {
         layoutManager = GridLayoutManager(this, 1)
         recyclerView = findViewById(R.id.sticker_list)
         recyclerView?.layoutManager = layoutManager
         recyclerView?.viewTreeObserver?.addOnGlobalLayoutListener(pageLayoutListener)
-        recyclerView?.addOnScrollListener(dividerScrollListener)
-//        divider = findViewById(R.id.divider)
+
         if (stickerPreviewAdapter == null) {
             stickerPreviewAdapter = StickerPreviewAdapter(
                 layoutInflater,
@@ -72,67 +80,22 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
             )
             recyclerView?.adapter = stickerPreviewAdapter
         }
-        packNameTextView.text = stickerPack?.name
-        packPublisherTextView.text = stickerPack?.publisher
-        packTrayIcon.setImageURI(
+        pack_name.text = stickerPack?.name
+        author.text = stickerPack?.publisher
+        tray_image.setImageURI(
             getStickerAssetUri(
                 stickerPack?.identifier,
                 stickerPack?.trayImageFile
             )
         )
-        packSizeTextView.text = Formatter.formatShortFileSize(this, stickerPack!!.totalSize)
-        addButton?.setOnClickListener { v: View? ->
+        pack_size.text = Formatter.formatShortFileSize(this, stickerPack!!.totalSize)
+
+        add_to_whatsapp_button.setOnClickListener { v: View? ->
             addStickerPackToWhatsApp(
                 stickerPack!!.identifier,
                 stickerPack!!.name
             )
         }
-        if (supportActionBar != null) {
-            supportActionBar!!.setDisplayHomeAsUpEnabled(showUpButton)
-            supportActionBar!!.title =
-                if (showUpButton) resources.getString(R.string.title_activity_sticker_pack_details_multiple_pack) else resources.getQuantityString(
-                    R.plurals.title_activity_sticker_packs_list,
-                    1
-                )
-        }
-    }
-
-    private fun launchInfoActivity(
-        publisherWebsite: String,
-        publisherEmail: String,
-        privacyPolicyWebsite: String,
-        licenseAgreementWebsite: String,
-        trayIconUriString: String
-    ) {
-        val intent = Intent(this@StickerPackDetailsActivity, StickerPackInfoActivity::class.java)
-        intent.putExtra(EXTRA_STICKER_PACK_ID, stickerPack!!.identifier)
-        intent.putExtra(EXTRA_STICKER_PACK_WEBSITE, publisherWebsite)
-        intent.putExtra(EXTRA_STICKER_PACK_EMAIL, publisherEmail)
-        intent.putExtra(EXTRA_STICKER_PACK_PRIVACY_POLICY, privacyPolicyWebsite)
-        intent.putExtra(EXTRA_STICKER_PACK_LICENSE_AGREEMENT, licenseAgreementWebsite)
-        intent.putExtra(EXTRA_STICKER_PACK_TRAY_ICON, trayIconUriString)
-        startActivity(intent)
-    }
-
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.toolbar, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
-
-    override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if (item.itemId == R.id.action_info && stickerPack != null) {
-            val trayIconUri =
-                getStickerAssetUri(stickerPack!!.identifier, stickerPack!!.trayImageFile)
-            launchInfoActivity(
-                stickerPack!!.publisherWebsite,
-                stickerPack!!.publisherEmail,
-                stickerPack!!.privacyPolicyWebsite,
-                stickerPack!!.licenseAgreementWebsite,
-                trayIconUri.toString()
-            )
-            return true
-        }
-        return super.onOptionsItemSelected(item)
     }
 
     private val pageLayoutListener = OnGlobalLayoutListener {
@@ -143,7 +106,7 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
 
     private fun setNumColumns(numColumns: Int) {
         if (this.numColumns != numColumns) {
-            layoutManager!!.spanCount = numColumns
+            layoutManager?.spanCount = numColumns
             this.numColumns = numColumns
             if (stickerPreviewAdapter != null) {
                 stickerPreviewAdapter!!.notifyDataSetChanged()
@@ -151,46 +114,64 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
         }
     }
 
-    private val dividerScrollListener: RecyclerView.OnScrollListener =
-        object : RecyclerView.OnScrollListener() {
-            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-                super.onScrollStateChanged(recyclerView, newState)
-                updateDivider(recyclerView)
-            }
-
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                super.onScrolled(recyclerView, dx, dy)
-                updateDivider(recyclerView)
-            }
-
-            private fun updateDivider(recyclerView: RecyclerView) {
-                val showDivider = recyclerView.computeVerticalScrollOffset() > 0
-                if (divider != null) {
-                    divider!!.visibility = if (showDivider) View.VISIBLE else View.INVISIBLE
-                }
-            }
-        }
-
-    override fun onResume() {
-        super.onResume()
-        whiteListCheckAsyncTask = WhiteListCheckAsyncTask(this)
-        whiteListCheckAsyncTask!!.execute(stickerPack)
+    private fun setupAdMob() {
+        MobileAds.initialize(this) {}
+        val adRequest = AdRequest.Builder().build()
+        adView.loadAd(adRequest)
     }
 
-    override fun onPause() {
-        super.onPause()
-        if (whiteListCheckAsyncTask != null && !whiteListCheckAsyncTask!!.isCancelled) {
-            whiteListCheckAsyncTask!!.cancel(true)
+    private fun setupToolbar() {
+        toolbar.apply {
+            toolbar_title.text =
+                getString(R.string.title_activity_sticker_pack_details_multiple_pack)
+            info.setOnClickListener {
+                startLaunchInfoActivity()
+            }
+            back.setOnClickListener {
+                finish()
+            }
         }
     }
 
     private fun updateAddUI(isWhitelisted: Boolean) {
         if (isWhitelisted) {
-            addButton!!.visibility = View.GONE
-//            alreadyAddedText!!.visibility = View.VISIBLE
+            add_to_whatsapp_button.isEnabled = false
+            text_add_whatsapp.text = getString(R.string.package_already_added)
         } else {
-            addButton!!.visibility = View.VISIBLE
-//            alreadyAddedText!!.visibility = View.GONE
+            add_to_whatsapp_button.isEnabled = true
+            text_add_whatsapp.text = getString(R.string.add_to_whatsapp)
+        }
+    }
+
+    private fun startLaunchInfoActivity() {
+        val trayIconUri =
+            getStickerAssetUri(stickerPack?.identifier, stickerPack?.trayImageFile)
+        if (stickerPack != null) {
+            launchInfoActivity(
+                stickerPack!!.publisherWebsite,
+                stickerPack!!.publisherEmail,
+                stickerPack!!.privacyPolicyWebsite,
+                stickerPack!!.licenseAgreementWebsite,
+                trayIconUri.toString()
+            )
+        }
+    }
+
+    private fun launchInfoActivity(
+        publisherWebsite: String,
+        publisherEmail: String,
+        privacyPolicyWebsite: String,
+        licenseAgreementWebsite: String,
+        trayIconUriString: String
+    ) {
+        Intent(this@StickerPackDetailsActivity, StickerPackInfoActivity::class.java).let {
+            it.putExtra(EXTRA_STICKER_PACK_ID, stickerPack?.identifier)
+            it.putExtra(EXTRA_STICKER_PACK_WEBSITE, publisherWebsite)
+            it.putExtra(EXTRA_STICKER_PACK_EMAIL, publisherEmail)
+            it.putExtra(EXTRA_STICKER_PACK_PRIVACY_POLICY, privacyPolicyWebsite)
+            it.putExtra(EXTRA_STICKER_PACK_LICENSE_AGREEMENT, licenseAgreementWebsite)
+            it.putExtra(EXTRA_STICKER_PACK_TRAY_ICON, trayIconUriString)
+            startActivity(it)
         }
     }
 
@@ -210,19 +191,5 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
             val stickerPackDetailsActivity = stickerPackDetailsActivityWeakReference.get()
             stickerPackDetailsActivity?.updateAddUI(isWhitelisted)
         }
-
-    }
-
-    companion object {
-        const val EXTRA_STICKER_PACK_ID = "sticker_pack_id"
-        const val EXTRA_STICKER_PACK_AUTHORITY = "sticker_pack_authority"
-        const val EXTRA_STICKER_PACK_NAME = "sticker_pack_name"
-        const val EXTRA_STICKER_PACK_WEBSITE = "sticker_pack_website"
-        const val EXTRA_STICKER_PACK_EMAIL = "sticker_pack_email"
-        const val EXTRA_STICKER_PACK_PRIVACY_POLICY = "sticker_pack_privacy_policy"
-        const val EXTRA_STICKER_PACK_LICENSE_AGREEMENT = "sticker_pack_license_agreement"
-        const val EXTRA_STICKER_PACK_TRAY_ICON = "sticker_pack_tray_icon"
-        const val EXTRA_SHOW_UP_BUTTON = "show_up_button"
-        const val EXTRA_STICKER_PACK_DATA = "sticker_pack"
     }
 }

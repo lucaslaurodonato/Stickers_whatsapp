@@ -7,6 +7,13 @@
     android:layout_height="match_parent"
     android:fitsSystemWindows="true">
 
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/include_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline_start"
         android:layout_width="wrap_content"
@@ -25,11 +32,11 @@
         android:id="@+id/tray_image"
         android:layout_width="36dp"
         android:layout_height="36dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="6dp"
         android:contentDescription="@string/tray_image_content_description"
         android:src="@color/colorAccent"
         app:layout_constraintStart_toStartOf="@+id/guideline_start"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
     <TextView
         android:id="@+id/pack_name"
@@ -37,12 +44,12 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/margin_from_tray_to_name"
         android:layout_marginLeft="@dimen/margin_from_tray_to_name"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="6dp"
         android:textColor="@color/black_translucent"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/tray_image"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
         tools:text="Pack Name" />
 
     <TextView
@@ -87,9 +94,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
+        android:layout_marginBottom="6dp"
         android:background="@drawable/btn_green"
         android:clickable="true"
-        android:layout_marginBottom="6dp"
         android:focusable="true"
         android:foreground="?attr/selectableItemBackgroundBorderless"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -107,7 +114,8 @@
             android:drawableStart="@drawable/sticker_3rdparty_wa"
             android:drawableLeft="@drawable/sticker_3rdparty_wa"
             android:focusable="false"
-            android:text="@string/add_to_whatsapp" />
+            tools:text="@string/add_to_whatsapp" />
+
     </FrameLayout>
 
     <com.google.android.gms.ads.AdView
@@ -116,6 +124,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
+        android:layout_marginTop="6dp"
         app:adSize="BANNER"
         app:adUnitId="@string/id_test_add"
         app:layout_constraintEnd_toStartOf="@+id/guideline_end"
