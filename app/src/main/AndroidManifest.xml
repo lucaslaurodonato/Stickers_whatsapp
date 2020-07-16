@@ -23,20 +23,15 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name="br.com.stickers.presentation.splash.view.SplashActivity"
-            android:theme="@style/AppTheme.Splash">
+            android:name=".presentation.all.EntryActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".presentation.all.EntryActivity"
-            android:parentActivityName=".presentation.all.StickerPackListActivity"
-            tools:ignore="UnusedAttribute" />
-
         <activity android:name=".presentation.all.StickerPackListActivity" />
+
         <activity
             android:name=".presentation.all.StickerPackDetailsActivity"
             android:parentActivityName=".presentation.all.StickerPackListActivity"
@@ -58,7 +53,7 @@
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-9308496284214694~3508386708"/>
+            android:value="ca-app-pub-9308496284214694~3508386708" />
 
         <provider
             android:name=".presentation.all.StickerContentProvider"
