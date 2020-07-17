@@ -14,7 +14,7 @@ android {
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 1
-        versionName "1.0"
+        versionName "0.0.1"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
@@ -28,15 +28,34 @@ android {
                 "\"${contentProviderAuthority}\"")
     }
 
+    signingConfigs {
+
+        debug {
+            storeFile file('keys/keystore_debug.jks')
+            keyAlias 'androiddebugkey'
+            keyPassword 'android'
+            storePassword 'android'
+        }
+
+        release {
+            storeFile file('keys/keystore_release.jks')
+            keyAlias 'stickersmeme'
+            keyPassword '1309donatos11'
+            storePassword '1309donatos11'
+        }
+    }
+
     buildTypes {
         debug {
             minifyEnabled false
             shrinkResources false
+            signingConfig signingConfigs.debug
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         release {
             minifyEnabled true
             shrinkResources true
+            signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

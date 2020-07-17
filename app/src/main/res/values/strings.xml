@@ -43,5 +43,6 @@
     <!--Id test add mob-->
     <string name="id_test_add">ca-app-pub-3940256099942544/6300978111</string>
     <string name="id_prod_add">ca-app-pub-9308496284214694~3508386708</string>
+    <string name="app_version_settings">"Version %s"</string>
 
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="60dp"
-    android:background="@color/white">
+    android:background="@drawable/background_green">
 
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/back"
@@ -33,6 +33,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textAllCaps="true"
+        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="@id/back"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

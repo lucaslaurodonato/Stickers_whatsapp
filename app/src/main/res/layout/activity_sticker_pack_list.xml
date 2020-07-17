@@ -3,6 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="@color/black_80"
     android:layout_height="match_parent">
 
     <include
@@ -41,7 +42,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="12dp"
         app:adSize="BANNER"
-        app:adUnitId="@string/id_test_add"
+        app:adUnitId="@string/id_prod_add"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">

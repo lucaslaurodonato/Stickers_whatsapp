@@ -10,6 +10,7 @@ import android.view.View.GONE
 import android.widget.TextView
 import androidx.annotation.IdRes
 import br.com.stickers.R
+import br.com.stickers.mechanism.AppUtils
 import br.com.stickers.presentation.base.view.BaseActivity
 import kotlinx.android.synthetic.main.activity_sticker_pack_details.toolbar
 import kotlinx.android.synthetic.main.activity_sticker_pack_info.*
@@ -29,14 +30,24 @@ class StickerPackInfoActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_sticker_pack_info)
+        receiveDataToSetup()
+        setupToolbar()
+        setupItems()
+        appVersion()
+    }
+
+    private fun appVersion() {
+        app_version.text =
+            getString(R.string.app_version_settings, AppUtils.version(applicationContext))
+    }
+
+    private fun receiveDataToSetup() {
         website = intent.getStringExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_WEBSITE)
         email = intent.getStringExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_EMAIL)
         privacyPolicy =
             intent.getStringExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_PRIVACY_POLICY)
         licenseAgreement =
             intent.getStringExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_LICENSE_AGREEMENT)
-        setupToolbar()
-        setupItems()
     }
 
     private fun setupItems() {
