@@ -2,27 +2,18 @@ package br.com.stickers.presentation.all
 
 import android.content.Context
 import android.content.Intent
-import android.graphics.Rect
-import android.graphics.drawable.BitmapDrawable
-import android.graphics.drawable.Drawable
 import android.net.Uri
-import android.os.Build
 import android.os.Bundle
 import android.text.TextUtils
 import android.view.View
 import android.view.View.GONE
 import android.widget.TextView
-import androidx.annotation.DrawableRes
 import androidx.annotation.IdRes
-import androidx.core.view.ViewCompat
 import br.com.stickers.R
 import br.com.stickers.presentation.base.view.BaseActivity
-import kotlinx.android.synthetic.main.activity_sticker_pack_details.*
 import kotlinx.android.synthetic.main.activity_sticker_pack_details.toolbar
 import kotlinx.android.synthetic.main.activity_sticker_pack_info.*
 import kotlinx.android.synthetic.main.include_toolbar.view.*
-import java.io.FileNotFoundException
-import timber.log.Timber.d as log
 
 class StickerPackInfoActivity : BaseActivity() {
 

@@ -7,7 +7,7 @@
     android:paddingStart="16dp"
     android:paddingTop="8dp"
     android:paddingEnd="16dp"
-    android:paddingBottom="4dp">
+    android:paddingBottom="8dp">
 
     <ImageView
         android:id="@+id/add_button_on_list"
@@ -19,70 +19,63 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/sticker_packs_list_item_image_list" />
 
-    <LinearLayout
-        android:id="@+id/sticker_pack_info"
+    <TextView
+        android:id="@+id/sticker_pack_title"
+        style="@style/sticker_packs_list_item_author_style"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
+        android:layout_weight="1"
+        android:ellipsize="end"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Pusheen" />
 
-        <TextView
-            android:id="@+id/sticker_pack_title"
-            style="@style/sticker_packs_list_item_author_style"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:ellipsize="end"
-            android:textColor="@android:color/black"
-            android:textSize="16sp"
-            tools:text="Pusheen" />
+    <TextView
+        android:id="@+id/sticker_pack_publisher"
+        style="@style/sticker_packs_list_item_author_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:ellipsize="end"
+        android:maxWidth="120dp"
+        app:layout_constraintBottom_toBottomOf="@+id/sticker_pack_title"
+        app:layout_constraintStart_toEndOf="@+id/sticker_pack_title"
+        app:layout_constraintTop_toTopOf="@+id/sticker_pack_title"
+        tools:text="petellison" />
 
-        <TextView
-            android:id="@+id/sticker_pack_publisher"
-            style="@style/sticker_packs_list_item_author_style"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginStart="8dp"
-            android:layout_marginLeft="8dp"
-            android:ellipsize="end"
-            android:maxWidth="120dp"
-            tools:text="petellison" />
+    <TextView
+        android:id="@+id/sticker_pack_list_item_dot"
+        style="@style/sticker_packs_list_item_author_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        android:text="@string/dot"
+        app:layout_constraintBottom_toBottomOf="@+id/sticker_pack_publisher"
+        app:layout_constraintStart_toEndOf="@+id/sticker_pack_publisher"
+        app:layout_constraintTop_toTopOf="@+id/sticker_pack_publisher" />
 
-        <TextView
-            android:id="@+id/sticker_pack_list_item_dot"
-            style="@style/sticker_packs_list_item_author_style"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:paddingStart="@dimen/sticker_pack_list_item_row_dot_horizontal_padding"
-            android:paddingLeft="@dimen/sticker_pack_list_item_row_dot_horizontal_padding"
-            android:paddingEnd="@dimen/sticker_pack_list_item_row_dot_horizontal_padding"
-            android:paddingRight="@dimen/sticker_pack_list_item_row_dot_horizontal_padding"
-            android:text="@string/dot" />
-
-        <TextView
-            android:id="@+id/sticker_pack_filesize"
-            style="@style/sticker_packs_list_item_author_style"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            tools:text="700kb" />
-
-    </LinearLayout>
+    <TextView
+        android:id="@+id/sticker_pack_filesize"
+        style="@style/sticker_packs_list_item_author_style"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="3dp"
+        app:layout_constraintBottom_toBottomOf="@+id/sticker_pack_list_item_dot"
+        app:layout_constraintStart_toEndOf="@+id/sticker_pack_list_item_dot"
+        app:layout_constraintTop_toTopOf="@+id/sticker_pack_list_item_dot"
+        tools:text="700kb" />
 
     <LinearLayout
         android:id="@+id/sticker_packs_list_item_image_list"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
         android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@id/add_button_on_list"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/sticker_pack_info" />
-
+        app:layout_constraintTop_toBottomOf="@+id/sticker_pack_title" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
