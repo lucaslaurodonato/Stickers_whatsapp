@@ -30,13 +30,6 @@ android {
 
     signingConfigs {
 
-        debug {
-            storeFile file('keys/keystore_debug.jks')
-            keyAlias 'androiddebugkey'
-            keyPassword 'android'
-            storePassword 'android'
-        }
-
         release {
             storeFile file('keys/keystore_release.jks')
             keyAlias 'stickersmeme'
@@ -49,7 +42,6 @@ android {
         debug {
             minifyEnabled false
             shrinkResources false
-            signingConfig signingConfigs.debug
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
         release {
