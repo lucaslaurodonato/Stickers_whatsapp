@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Link to direct-->
+    <string name="email_support" translatable="false">lucaslaurodonato@hotmail.com</string>
+    <string name="linkedin_support" translatable="false">https://www.linkedin.com/in/lucaslaurodonato/</string>
+
+    <!--Items Info-->
+    <string name="send_email">Send email</string>
+    <string name="info_send_email_to_prompt">Send email with</string>
+    <string name="privacy_policy">Privacy policy</string>
+    <string name="license_agreement">License agreement</string>
+    <string name="title_activity_sticker_pack_info">Info</string>
+    <string name="view_webpage">View developer linkedin</string>
+
+    <!--App Version-->
+    <string name="app_version_settings">"Version %s"</string>
+    <string name="dark_mode">Dark theme</string>
+
+</resources>

@@ -6,6 +6,7 @@ import android.os.AsyncTask
 import android.os.Bundle
 import android.text.format.Formatter
 import android.view.View
+import android.view.View.GONE
 import android.view.ViewTreeObserver.OnGlobalLayoutListener
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +15,7 @@ import br.com.stickers.data.local.SharedPref
 import br.com.stickers.presentation.all.StickerPackLoader.getStickerAssetUri
 import br.com.stickers.mechanism.validator.WhitelistCheck.isWhitelisted
 import br.com.stickers.mechanism.addStickerPack.AddStickerPackActivity
+import br.com.stickers.presentation.info.StickerPackInfoActivity
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_sticker_pack_details.*
@@ -23,15 +25,11 @@ import java.lang.ref.WeakReference
 class StickerPackDetailsActivity : AddStickerPackActivity() {
 
     companion object {
-        fun getStartIntent(context: Context) = Intent(context, StickerPackDetailsActivity::class.java)
+        fun getStartIntent(context: Context) =
+            Intent(context, StickerPackDetailsActivity::class.java)
         const val EXTRA_STICKER_PACK_ID = "sticker_pack_id"
         const val EXTRA_STICKER_PACK_AUTHORITY = "sticker_pack_authority"
         const val EXTRA_STICKER_PACK_NAME = "sticker_pack_name"
-        const val EXTRA_STICKER_PACK_WEBSITE = "sticker_pack_website"
-        const val EXTRA_STICKER_PACK_EMAIL = "sticker_pack_email"
-        const val EXTRA_STICKER_PACK_PRIVACY_POLICY = "sticker_pack_privacy_policy"
-        const val EXTRA_STICKER_PACK_LICENSE_AGREEMENT = "sticker_pack_license_agreement"
-        const val EXTRA_STICKER_PACK_TRAY_ICON = "sticker_pack_tray_icon"
         const val EXTRA_SHOW_UP_BUTTON = "show_up_button"
         const val EXTRA_STICKER_PACK_DATA = "sticker_pack"
     }
@@ -138,9 +136,7 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
         toolbar.apply {
             toolbar_title.text =
                 getString(R.string.title_activity_sticker_pack_details_multiple_pack)
-            info.setOnClickListener {
-                startLaunchInfoActivity()
-            }
+            info.visibility = GONE
             back.setOnClickListener {
                 finish()
             }
@@ -154,33 +150,6 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
         } else {
             add_to_whatsapp_button.isEnabled = true
             text_add_whatsapp.text = getString(R.string.add_to_whatsapp)
-        }
-    }
-
-    private fun startLaunchInfoActivity() {
-        if (stickerPack != null) {
-            launchInfoActivity(
-                stickerPack!!.publisherWebsite,
-                stickerPack!!.publisherEmail,
-                stickerPack!!.privacyPolicyWebsite,
-                stickerPack!!.licenseAgreementWebsite
-            )
-        }
-    }
-
-    private fun launchInfoActivity(
-        publisherWebsite: String,
-        publisherEmail: String,
-        privacyPolicyWebsite: String,
-        licenseAgreementWebsite: String
-    ) {
-        Intent(this@StickerPackDetailsActivity, StickerPackInfoActivity::class.java).let {
-            it.putExtra(EXTRA_STICKER_PACK_ID, stickerPack?.identifier)
-            it.putExtra(EXTRA_STICKER_PACK_WEBSITE, publisherWebsite)
-            it.putExtra(EXTRA_STICKER_PACK_EMAIL, publisherEmail)
-            it.putExtra(EXTRA_STICKER_PACK_PRIVACY_POLICY, privacyPolicyWebsite)
-            it.putExtra(EXTRA_STICKER_PACK_LICENSE_AGREEMENT, licenseAgreementWebsite)
-            startActivity(it)
         }
     }
 

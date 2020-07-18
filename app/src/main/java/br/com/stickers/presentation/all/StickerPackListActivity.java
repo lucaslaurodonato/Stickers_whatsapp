@@ -1,22 +1,15 @@
-/*
- * Copyright (c) WhatsApp Inc. and its affiliates.
- * All rights reserved.
- *
- * This source code is licensed under the BSD-style license found in the
- * LICENSE file in the root directory of this source tree.
- */
-
 package br.com.stickers.presentation.all;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.gms.ads.AdRequest;
-import com.google.android.gms.ads.AdSize;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.initialization.InitializationStatus;
@@ -32,7 +25,7 @@ import br.com.stickers.data.local.SharedPref;
 import br.com.stickers.mechanism.addStickerPack.AddStickerPackActivity;
 import br.com.stickers.presentation.controller.StickerPackListItemViewHolder;
 import br.com.stickers.mechanism.validator.WhitelistCheck;
-
+import br.com.stickers.presentation.info.StickerPackInfoActivity;
 
 public class StickerPackListActivity extends AddStickerPackActivity {
 
@@ -46,6 +39,7 @@ public class StickerPackListActivity extends AddStickerPackActivity {
     private ArrayList<StickerPack> stickerPackList;
     private AdView mAdView;
     private SharedPref sharedPref;
+    private View info;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,6 +55,18 @@ public class StickerPackListActivity extends AddStickerPackActivity {
         stickerPackList = getIntent().getParcelableArrayListExtra(EXTRA_STICKER_PACK_LIST_DATA);
         showStickerPackList(stickerPackList);
         setupAdMob();
+        startInfoActivity();
+    }
+
+    private void startInfoActivity() {
+        info = findViewById(R.id.info_home);
+        info.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(StickerPackListActivity.this, StickerPackInfoActivity.class);
+                startActivity(i);
+            }
+        });
     }
 
     private void setupAdMob() {
@@ -73,7 +79,6 @@ public class StickerPackListActivity extends AddStickerPackActivity {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
     }
-
 
     @Override
     protected void onResume() {

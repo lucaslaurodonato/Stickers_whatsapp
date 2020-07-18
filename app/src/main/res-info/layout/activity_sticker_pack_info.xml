@@ -20,7 +20,7 @@
         android:layout_marginStart="6dp"
         android:text="@string/dark_mode"
         android:textColor="?attr/textColor"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintBottom_toTopOf="@+id/setup_items_view"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
@@ -36,7 +36,7 @@
         tools:text="Version V.0.0.1" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:id="@+id/linearLayout"
+        android:id="@+id/setup_items_view"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
@@ -71,24 +71,28 @@
         <TextView
             android:id="@+id/privacy_policy"
             style="@style/InfoButtonStyle"
-            android:drawableStart="@drawable/sticker_3rdparty_privacy"
-            android:drawableLeft="@drawable/sticker_3rdparty_privacy"
+            android:drawableStart="@drawable/ic_padlock"
+            android:drawableLeft="@drawable/ic_padlock"
             android:text="@string/privacy_policy"
             android:textColor="?attr/textColor"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/send_email"
-            app:layout_constraintTop_toBottomOf="@+id/send_email" />
+            app:layout_constraintTop_toBottomOf="@+id/send_email"
+            tools:visibility="visible" />
 
         <TextView
             android:id="@+id/license_agreement"
             style="@style/InfoButtonStyle"
-            android:drawableStart="@drawable/sticker_3rdparty_license"
-            android:drawableLeft="@drawable/sticker_3rdparty_license"
+            android:drawableStart="@drawable/ic_menu"
+            android:drawableLeft="@drawable/ic_menu"
             android:text="@string/license_agreement"
             android:textColor="?attr/textColor"
+            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="@+id/privacy_policy"
             app:layout_constraintStart_toStartOf="@+id/privacy_policy"
-            app:layout_constraintTop_toBottomOf="@+id/privacy_policy" />
+            app:layout_constraintTop_toBottomOf="@+id/privacy_policy"
+            tools:visibility="visible" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

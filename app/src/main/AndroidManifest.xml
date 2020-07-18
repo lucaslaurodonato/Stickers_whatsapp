@@ -17,18 +17,22 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name=".presentation.all.EntryActivity">
+            android:name=".presentation.all.EntryActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".presentation.all.StickerPackListActivity" />
+        <activity
+            android:name=".presentation.all.StickerPackListActivity"
+            android:screenOrientation="portrait" />
 
         <activity
             android:name=".presentation.all.StickerPackDetailsActivity"
             android:parentActivityName=".presentation.all.StickerPackListActivity"
+            android:screenOrientation="portrait"
             tools:ignore="UnusedAttribute">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
@@ -36,9 +40,10 @@
         </activity>
 
         <activity
-            android:name=".presentation.all.StickerPackInfoActivity"
+            android:name=".presentation.info.StickerPackInfoActivity"
             android:label="@string/title_activity_sticker_pack_info"
             android:parentActivityName=".presentation.all.StickerPackDetailsActivity"
+            android:screenOrientation="portrait"
             tools:ignore="UnusedAttribute">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"

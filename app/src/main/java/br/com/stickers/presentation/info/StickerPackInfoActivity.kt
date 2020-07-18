@@ -1,18 +1,14 @@
-package br.com.stickers.presentation.all
+package br.com.stickers.presentation.info
 
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
-import android.text.TextUtils
-import android.view.View
 import android.view.View.GONE
-import android.widget.TextView
-import androidx.annotation.IdRes
-import androidx.appcompat.app.AppCompatDelegate
 import br.com.stickers.R
 import br.com.stickers.data.local.SharedPref
 import br.com.stickers.mechanism.AppUtils
+import br.com.stickers.presentation.all.EntryActivity
 import br.com.stickers.presentation.base.view.BaseActivity
 import kotlinx.android.synthetic.main.activity_sticker_pack_details.toolbar
 import kotlinx.android.synthetic.main.activity_sticker_pack_info.*
@@ -24,10 +20,6 @@ class StickerPackInfoActivity : BaseActivity() {
         fun getStartIntent(context: Context) = Intent(context, StickerPackInfoActivity::class.java)
     }
 
-    private var website: String? = null
-    private var email: String? = null
-    private var privacyPolicy: String? = null
-    private var licenseAgreement: String? = null
     private lateinit var sharedPref: SharedPref
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,20 +31,19 @@ class StickerPackInfoActivity : BaseActivity() {
             setTheme(R.style.AppTheme)
         }
         setContentView(R.layout.activity_sticker_pack_info)
-        receiveDataToSetup()
         setupToolbar()
-        setupItems()
         appVersion()
         darkMode()
+        setupFields()
+        receiveDataToSetup()
     }
 
     private fun darkMode() {
         if (sharedPref.loadNightModeState()) {
             dark_mode.isChecked = true
         }
-
-        dark_mode.setOnCheckedChangeListener { _, b ->
-            if (b) {
+        dark_mode.setOnCheckedChangeListener { _, isChecked ->
+            if (isChecked) {
                 sharedPref.setNightModeState(true)
                 restartApplication()
             } else {
@@ -66,6 +57,7 @@ class StickerPackInfoActivity : BaseActivity() {
         Intent(applicationContext, EntryActivity::class.java).let {
             startActivity(it)
             finish()
+            overridePendingTransition(0, 0)
         }
     }
 
@@ -75,31 +67,9 @@ class StickerPackInfoActivity : BaseActivity() {
     }
 
     private fun receiveDataToSetup() {
-        website = intent.getStringExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_WEBSITE)
-        email = intent.getStringExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_EMAIL)
-        privacyPolicy =
-            intent.getStringExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_PRIVACY_POLICY)
-        licenseAgreement =
-            intent.getStringExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_LICENSE_AGREEMENT)
-    }
-
-    private fun setupItems() {
-        if (website != null) {
-            setupTextView(website!!, R.id.view_webpage)
-        }
-        if (TextUtils.isEmpty(email)) {
-            send_email.visibility = GONE
-        } else {
-            send_email.setOnClickListener { v: View? -> launchEmailClient(email!!) }
-        }
-        if (privacyPolicy != null) {
-            setupTextView(privacyPolicy!!, R.id.privacy_policy)
-        }
-        if (licenseAgreement != null) {
-            setupTextView(
-                licenseAgreement!!,
-                R.id.license_agreement
-            )
+        val email = getString(R.string.email_support)
+        send_email.setOnClickListener {
+            launchEmailClient(email)
         }
     }
 
@@ -110,15 +80,6 @@ class StickerPackInfoActivity : BaseActivity() {
             back.setOnClickListener {
                 finish()
             }
-        }
-    }
-
-    private fun setupTextView(website: String, @IdRes textViewResId: Int) {
-        val viewWebPage = findViewById<TextView>(textViewResId)
-        if (TextUtils.isEmpty(website)) {
-            viewWebPage.visibility = GONE
-        } else {
-            viewWebPage.setOnClickListener { v: View? -> launchWebPage(website) }
         }
     }
 
@@ -135,6 +96,13 @@ class StickerPackInfoActivity : BaseActivity() {
                 resources.getString(R.string.info_send_email_to_prompt)
             )
         )
+    }
+
+    private fun setupFields() {
+        val website = getString(R.string.linkedin_support)
+        view_webpage.setOnClickListener {
+            launchWebPage(website)
+        }
     }
 
     private fun launchWebPage(website: String) {
