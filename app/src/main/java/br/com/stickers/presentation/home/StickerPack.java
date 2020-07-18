@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-package br.com.stickers.presentation.all;
+package br.com.stickers.presentation.home;
 
 import android.os.Parcel;
 import android.os.Parcelable;

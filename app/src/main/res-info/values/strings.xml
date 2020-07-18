@@ -5,6 +5,11 @@
     <string name="email_support" translatable="false">lucaslaurodonato@hotmail.com</string>
     <string name="linkedin_support" translatable="false">https://www.linkedin.com/in/lucaslaurodonato/</string>
 
+    <string name="dark_mode_on">To activate dark mode, you must restart</string>
+    <string name="dark_mode_off">To disable dark mode, you must restart</string>
+
+    <string name="dark_mode_restart_button">Restart</string>
+
     <!--Items Info-->
     <string name="send_email">Send email</string>
     <string name="info_send_email_to_prompt">Send email with</string>

@@ -1,4 +1,4 @@
-package br.com.stickers.presentation.info
+package br.com.stickers.presentation.info.view
 
 import android.content.Context
 import android.content.Intent
@@ -8,9 +8,10 @@ import android.view.View.GONE
 import br.com.stickers.R
 import br.com.stickers.data.local.SharedPref
 import br.com.stickers.mechanism.AppUtils
-import br.com.stickers.presentation.all.EntryActivity
+import br.com.stickers.presentation.home.SplashActivity
 import br.com.stickers.presentation.base.view.BaseActivity
-import kotlinx.android.synthetic.main.activity_sticker_pack_details.toolbar
+import br.com.stickers.presentation.info.adapter.DarkThemeDialog
+import kotlinx.android.synthetic.main.activity_details_pack.toolbar
 import kotlinx.android.synthetic.main.activity_sticker_pack_info.*
 import kotlinx.android.synthetic.main.include_toolbar.view.*
 
@@ -21,6 +22,7 @@ class StickerPackInfoActivity : BaseActivity() {
     }
 
     private lateinit var sharedPref: SharedPref
+    private var darkModeDialog: DarkThemeDialog? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -38,6 +40,30 @@ class StickerPackInfoActivity : BaseActivity() {
         receiveDataToSetup()
     }
 
+    private fun setupDialogLogout() {
+        val title: String = if (sharedPref.loadNightModeState()) {
+            getString(R.string.dark_mode_on)
+        } else {
+            getString(R.string.dark_mode_off)
+        }
+
+        darkModeDialog =
+            DarkThemeDialog(
+                this,
+                title = title,
+                button = getString(R.string.dark_mode_restart_button),
+                listener = object : DarkThemeDialog.DialogListener {
+                    override fun onNegativeClickListener() {}
+
+                    override fun onPositiveClickListener() {
+                        restartApplication()
+                    }
+                }).apply {
+                setCancelable(false)
+                show()
+            }
+    }
+
     private fun darkMode() {
         if (sharedPref.loadNightModeState()) {
             dark_mode.isChecked = true
@@ -45,16 +71,16 @@ class StickerPackInfoActivity : BaseActivity() {
         dark_mode.setOnCheckedChangeListener { _, isChecked ->
             if (isChecked) {
                 sharedPref.setNightModeState(true)
-                restartApplication()
+                setupDialogLogout()
             } else {
                 sharedPref.setNightModeState(false)
-                restartApplication()
+                setupDialogLogout()
             }
         }
     }
 
     private fun restartApplication() {
-        Intent(applicationContext, EntryActivity::class.java).let {
+        Intent(applicationContext, SplashActivity::class.java).let {
             startActivity(it)
             finish()
             overridePendingTransition(0, 0)

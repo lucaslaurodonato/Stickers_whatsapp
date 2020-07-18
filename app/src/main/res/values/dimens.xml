@@ -8,4 +8,8 @@
     <dimen name="sticker_pack_list_item_preview_image_size">50dp</dimen>
     <dimen name="sticker_pack_list_item_preview_image_padding">4dp</dimen>
     <dimen name="sticker_pack_list_item_row_dot_horizontal_padding">4dp</dimen>
+    <dimen name="small_margin">12dp</dimen>
+    <dimen name="match_constraints">0dp</dimen>
+    <dimen name="default_margin">16dp</dimen>
+    <dimen name="x_large_size">15sp</dimen>
 </resources>

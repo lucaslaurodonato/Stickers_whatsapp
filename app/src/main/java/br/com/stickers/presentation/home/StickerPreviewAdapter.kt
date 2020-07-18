@@ -5,13 +5,13 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
-package br.com.stickers.presentation.all
+package br.com.stickers.presentation.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import br.com.stickers.R
-import br.com.stickers.presentation.controller.StickerPreviewViewHolder
+import br.com.stickers.presentation.home.ViewController.StickerPreviewViewHolder
 
 class StickerPreviewAdapter internal constructor(
 

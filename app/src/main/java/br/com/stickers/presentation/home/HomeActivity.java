@@ -1,4 +1,4 @@
-package br.com.stickers.presentation.all;
+package br.com.stickers.presentation.home;
 
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -23,11 +23,11 @@ import java.util.List;
 import br.com.stickers.R;
 import br.com.stickers.data.local.SharedPref;
 import br.com.stickers.mechanism.addStickerPack.AddStickerPackActivity;
-import br.com.stickers.presentation.controller.StickerPackListItemViewHolder;
+import br.com.stickers.presentation.home.ViewController.StickerPackListItemViewHolder;
 import br.com.stickers.mechanism.validator.WhitelistCheck;
-import br.com.stickers.presentation.info.StickerPackInfoActivity;
+import br.com.stickers.presentation.info.view.StickerPackInfoActivity;
 
-public class StickerPackListActivity extends AddStickerPackActivity {
+public class HomeActivity extends AddStickerPackActivity {
 
     public static final String EXTRA_STICKER_PACK_LIST_DATA = "sticker_pack_list";
     private static final int STICKER_PREVIEW_DISPLAY_LIMIT = 5;
@@ -50,7 +50,7 @@ public class StickerPackListActivity extends AddStickerPackActivity {
         } else {
             setTheme(R.style.AppTheme);
         }
-        setContentView(R.layout.activity_sticker_pack_list);
+        setContentView(R.layout.activity_home);
         packRecyclerView = findViewById(R.id.sticker_pack_list);
         stickerPackList = getIntent().getParcelableArrayListExtra(EXTRA_STICKER_PACK_LIST_DATA);
         showStickerPackList(stickerPackList);
@@ -63,7 +63,7 @@ public class StickerPackListActivity extends AddStickerPackActivity {
         info.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(StickerPackListActivity.this, StickerPackInfoActivity.class);
+                Intent i = new Intent(HomeActivity.this, StickerPackInfoActivity.class);
                 startActivity(i);
             }
         });
@@ -123,30 +123,30 @@ public class StickerPackListActivity extends AddStickerPackActivity {
     }
 
     static class WhiteListCheckAsyncTask extends AsyncTask<StickerPack, Void, List<StickerPack>> {
-        private final WeakReference<StickerPackListActivity> stickerPackListActivityWeakReference;
+        private final WeakReference<HomeActivity> stickerPackListActivityWeakReference;
 
-        WhiteListCheckAsyncTask(StickerPackListActivity stickerPackListActivity) {
-            this.stickerPackListActivityWeakReference = new WeakReference<>(stickerPackListActivity);
+        WhiteListCheckAsyncTask(HomeActivity homeActivity) {
+            this.stickerPackListActivityWeakReference = new WeakReference<>(homeActivity);
         }
 
         @Override
         protected final List<StickerPack> doInBackground(StickerPack... stickerPackArray) {
-            final StickerPackListActivity stickerPackListActivity = stickerPackListActivityWeakReference.get();
-            if (stickerPackListActivity == null) {
+            final HomeActivity homeActivity = stickerPackListActivityWeakReference.get();
+            if (homeActivity == null) {
                 return Arrays.asList(stickerPackArray);
             }
             for (StickerPack stickerPack : stickerPackArray) {
-                stickerPack.setIsWhitelisted(WhitelistCheck.isWhitelisted(stickerPackListActivity, stickerPack.identifier));
+                stickerPack.setIsWhitelisted(WhitelistCheck.isWhitelisted(homeActivity, stickerPack.identifier));
             }
             return Arrays.asList(stickerPackArray);
         }
 
         @Override
         protected void onPostExecute(List<StickerPack> stickerPackList) {
-            final StickerPackListActivity stickerPackListActivity = stickerPackListActivityWeakReference.get();
-            if (stickerPackListActivity != null) {
-                stickerPackListActivity.allStickerPacksListAdapter.setStickerPackList(stickerPackList);
-                stickerPackListActivity.allStickerPacksListAdapter.notifyDataSetChanged();
+            final HomeActivity homeActivity = stickerPackListActivityWeakReference.get();
+            if (homeActivity != null) {
+                homeActivity.allStickerPacksListAdapter.setStickerPackList(stickerPackList);
+                homeActivity.allStickerPacksListAdapter.notifyDataSetChanged();
             }
         }
     }

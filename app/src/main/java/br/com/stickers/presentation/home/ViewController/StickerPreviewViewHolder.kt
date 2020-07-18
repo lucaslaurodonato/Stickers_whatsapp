@@ -5,7 +5,7 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
-package br.com.stickers.presentation.controller
+package br.com.stickers.presentation.home.ViewController
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView

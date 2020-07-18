@@ -5,7 +5,7 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
-package br.com.stickers.presentation.all
+package br.com.stickers.presentation.home
 
 import android.content.Context
 import android.content.Intent
@@ -15,22 +15,22 @@ import android.util.Pair
 import android.view.View.GONE
 import br.com.stickers.*
 import br.com.stickers.presentation.base.view.BaseActivity
-import kotlinx.android.synthetic.main.activity_entry.*
+import kotlinx.android.synthetic.main.activity_splash.*
 import java.lang.ref.WeakReference
 import java.util.*
 import timber.log.Timber.d as log
 
-class EntryActivity : BaseActivity() {
+class SplashActivity : BaseActivity() {
 
     companion object {
-        fun getStartIntent(context: Context) = Intent(context, EntryActivity::class.java)
+        fun getStartIntent(context: Context) = Intent(context, SplashActivity::class.java)
     }
 
     private var loadListAsyncTask: LoadListAsyncTask? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_entry)
+        setContentView(R.layout.activity_splash)
 
         overridePendingTransition(0, 0)
         loadListAsyncTask =
@@ -41,9 +41,9 @@ class EntryActivity : BaseActivity() {
     private fun showStickerPack(stickerPackList: ArrayList<StickerPack>?) {
         entry_activity_progress.visibility = GONE
         if (stickerPackList!!.size > 1) {
-            Intent(this, StickerPackListActivity::class.java).let {
+            Intent(this, HomeActivity::class.java).let {
                 it.putParcelableArrayListExtra(
-                    StickerPackListActivity.EXTRA_STICKER_PACK_LIST_DATA,
+                    HomeActivity.EXTRA_STICKER_PACK_LIST_DATA,
                     stickerPackList
                 )
                 startActivity(it)
@@ -51,10 +51,10 @@ class EntryActivity : BaseActivity() {
                 overridePendingTransition(0, 0)
             }
         } else {
-            Intent(this, StickerPackDetailsActivity::class.java).let {
-                it.putExtra(StickerPackDetailsActivity.EXTRA_SHOW_UP_BUTTON, false)
+            Intent(this, DetailsPackActivity::class.java).let {
+                it.putExtra(DetailsPackActivity.EXTRA_SHOW_UP_BUTTON, false)
                 it.putExtra(
-                    StickerPackDetailsActivity.EXTRA_STICKER_PACK_DATA,
+                    DetailsPackActivity.EXTRA_STICKER_PACK_DATA,
                     stickerPackList[0]
                 )
                 startActivity(it)
@@ -77,9 +77,9 @@ class EntryActivity : BaseActivity() {
         }
     }
 
-    internal class LoadListAsyncTask(activity: EntryActivity) :
+    internal class LoadListAsyncTask(activity: SplashActivity) :
         AsyncTask<Void?, Void?, Pair<String?, ArrayList<StickerPack>?>>() {
-        private val contextWeakReference: WeakReference<EntryActivity> = WeakReference(activity)
+        private val contextWeakReference: WeakReference<SplashActivity> = WeakReference(activity)
         override fun doInBackground(vararg voids: Void?): Pair<String?, ArrayList<StickerPack>?> {
             val stickerPackList: ArrayList<StickerPack>
             return try {

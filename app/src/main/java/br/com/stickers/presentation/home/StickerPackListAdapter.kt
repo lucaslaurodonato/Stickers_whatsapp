@@ -5,7 +5,7 @@
  * This source code is licensed under the BSD-style license found in the
  * LICENSE file in the root directory of this source tree.
  */
-package br.com.stickers.presentation.all
+package br.com.stickers.presentation.home
 
 import android.content.Intent
 import android.graphics.drawable.Drawable
@@ -20,8 +20,8 @@ import android.widget.LinearLayout
 import androidx.recyclerview.widget.RecyclerView
 import br.com.stickers.R
 import com.facebook.drawee.view.SimpleDraweeView
-import br.com.stickers.presentation.all.StickerPackLoader.getStickerAssetUri
-import br.com.stickers.presentation.controller.StickerPackListItemViewHolder
+import br.com.stickers.presentation.home.StickerPackLoader.getStickerAssetUri
+import br.com.stickers.presentation.home.ViewController.StickerPackListItemViewHolder
 
 private class StickerPackListAdapter internal constructor(
 
@@ -48,9 +48,9 @@ private class StickerPackListAdapter internal constructor(
         viewHolder.fileSizeView.text = Formatter.formatShortFileSize(context, pack.totalSize)
         viewHolder.titleView.text = pack.name
         viewHolder.container.setOnClickListener { view: View ->
-            val intent = Intent(view.context, StickerPackDetailsActivity::class.java)
-            intent.putExtra(StickerPackDetailsActivity.EXTRA_SHOW_UP_BUTTON, true)
-            intent.putExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_DATA, pack)
+            val intent = Intent(view.context, DetailsPackActivity::class.java)
+            intent.putExtra(DetailsPackActivity.EXTRA_SHOW_UP_BUTTON, true)
+            intent.putExtra(DetailsPackActivity.EXTRA_STICKER_PACK_DATA, pack)
             view.context.startActivity(intent)
         }
         viewHolder.imageRowView.removeAllViews()

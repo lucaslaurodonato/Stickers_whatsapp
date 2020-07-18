@@ -1,4 +1,4 @@
-package br.com.stickers.presentation.all
+package br.com.stickers.presentation.home
 
 import android.content.Context
 import android.content.Intent
@@ -12,21 +12,20 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.stickers.R
 import br.com.stickers.data.local.SharedPref
-import br.com.stickers.presentation.all.StickerPackLoader.getStickerAssetUri
+import br.com.stickers.presentation.home.StickerPackLoader.getStickerAssetUri
 import br.com.stickers.mechanism.validator.WhitelistCheck.isWhitelisted
 import br.com.stickers.mechanism.addStickerPack.AddStickerPackActivity
-import br.com.stickers.presentation.info.StickerPackInfoActivity
 import com.google.android.gms.ads.AdRequest
 import com.google.android.gms.ads.MobileAds
-import kotlinx.android.synthetic.main.activity_sticker_pack_details.*
+import kotlinx.android.synthetic.main.activity_details_pack.*
 import kotlinx.android.synthetic.main.include_toolbar.view.*
 import java.lang.ref.WeakReference
 
-class StickerPackDetailsActivity : AddStickerPackActivity() {
+class DetailsPackActivity : AddStickerPackActivity() {
 
     companion object {
         fun getStartIntent(context: Context) =
-            Intent(context, StickerPackDetailsActivity::class.java)
+            Intent(context, DetailsPackActivity::class.java)
         const val EXTRA_STICKER_PACK_ID = "sticker_pack_id"
         const val EXTRA_STICKER_PACK_AUTHORITY = "sticker_pack_authority"
         const val EXTRA_STICKER_PACK_NAME = "sticker_pack_name"
@@ -50,7 +49,7 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
         } else {
             setTheme(R.style.AppTheme)
         }
-        setContentView(R.layout.activity_sticker_pack_details)
+        setContentView(R.layout.activity_details_pack)
         stickerPack = intent.getParcelableExtra(EXTRA_STICKER_PACK_DATA)
         setupAdMob()
         setupToolbar()
@@ -153,20 +152,20 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
         }
     }
 
-    internal class WhiteListCheckAsyncTask(stickerPackListActivity: StickerPackDetailsActivity) :
+    internal class WhiteListCheckAsyncTask(listPackActivity: DetailsPackActivity) :
         AsyncTask<StickerPack?, Void?, Boolean>() {
-        private val stickerPackDetailsActivityWeakReference: WeakReference<StickerPackDetailsActivity> =
-            WeakReference(stickerPackListActivity)
+        private val detailsPackActivityWeakReference: WeakReference<DetailsPackActivity> =
+            WeakReference(listPackActivity)
 
         override fun doInBackground(vararg stickerPacks: StickerPack?): Boolean {
             val stickerPack = stickerPacks[0]
-            val stickerPackDetailsActivity = stickerPackDetailsActivityWeakReference.get()
+            val stickerPackDetailsActivity = detailsPackActivityWeakReference.get()
                 ?: return false
             return isWhitelisted(stickerPackDetailsActivity, stickerPack!!.identifier)
         }
 
         override fun onPostExecute(isWhitelisted: Boolean) {
-            val stickerPackDetailsActivity = stickerPackDetailsActivityWeakReference.get()
+            val stickerPackDetailsActivity = detailsPackActivityWeakReference.get()
             stickerPackDetailsActivity?.updateAddUI(isWhitelisted)
         }
     }

@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree.
  */
 
-package br.com.stickers.presentation.all;
+package br.com.stickers.presentation.home;
 
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -26,8 +26,6 @@ import java.net.URL;
 import java.util.List;
 
 import br.com.stickers.data.type.Sticker;
-import br.com.stickers.presentation.all.StickerPack;
-import br.com.stickers.presentation.all.StickerPackLoader;
 
 class StickerPackValidator {
     private static final int STICKER_FILE_SIZE_LIMIT_KB = 100;
