@@ -20,7 +20,7 @@ import androidx.fragment.app.DialogFragment
 import br.com.stickers.*
 import br.com.stickers.presentation.base.view.BaseActivity.MessageDialogFragment.Companion.newInstance
 import br.com.stickers.mechanism.validator.WhitelistCheck
-import br.com.stickers.presentation.all.StickerPackDetailsActivity
+import br.com.stickers.presentation.home.DetailsPackActivity
 import br.com.stickers.presentation.base.view.BaseActivity
 import timber.log.Timber.d as log
 
@@ -100,12 +100,12 @@ abstract class AddStickerPackActivity : BaseActivity() {
     private fun createIntentToAddStickerPack(identifier: String, stickerPackName: String): Intent {
         val intent = Intent()
         intent.action = "com.whatsapp.intent.action.ENABLE_STICKER_PACK"
-        intent.putExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_ID, identifier)
+        intent.putExtra(DetailsPackActivity.EXTRA_STICKER_PACK_ID, identifier)
         intent.putExtra(
-            StickerPackDetailsActivity.EXTRA_STICKER_PACK_AUTHORITY,
+            DetailsPackActivity.EXTRA_STICKER_PACK_AUTHORITY,
             BuildConfig.CONTENT_PROVIDER_AUTHORITY
         )
-        intent.putExtra(StickerPackDetailsActivity.EXTRA_STICKER_PACK_NAME, stickerPackName)
+        intent.putExtra(DetailsPackActivity.EXTRA_STICKER_PACK_NAME, stickerPackName)
         return intent
     }
 

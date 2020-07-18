@@ -17,6 +17,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/info_home"
+        android:layout_width="22dp"
+        android:layout_height="22dp"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/ic_info"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar_title"
+        app:layout_constraintEnd_toEndOf="@+id/toolbar_title"
+        app:layout_constraintTop_toTopOf="@+id/toolbar_title" />
+
     <TextView
         android:id="@+id/toolbar_title"
         android:layout_width="0dp"

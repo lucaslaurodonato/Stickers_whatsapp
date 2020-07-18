@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--App Version-->
+    <string name="app_version_settings">"Versão do aplicativo %s"</string>
+    <string name="dark_mode">Tema escuro</string>
+
+    <string name="title_activity_sticker_pack_info">Dados</string>
+
+    <string name="dark_mode_on">Para ativar o modo escuro é necessário reiniciar o aplicativo</string>
+    <string name="dark_mode_off">Para desativar o modo escuro é necessário reiniciar o aplicativo</string>
+
+    <string name="dark_mode_restart_button">Reiniciar</string>
+
+    <!--Itens Info-->
+    <string name="license_agreement">Contrato de licença</string>
+    <string name="info_send_email_to_prompt">Enviar e-mail com…</string>
+    <string name="privacy_policy">Política de privacidade</string>
+    <string name="send_email">Enviar um e-mail</string>
+    <string name="view_webpage">Meu linkedin</string>
+
+</resources>

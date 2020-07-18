@@ -3,7 +3,6 @@
     <color name="colorPrimary">@color/black_80</color>
     <color name="colorPrimaryDark">@color/black</color>
     <color name="colorAccent">@color/whatsapp_green</color>
-    <color name="actionBarArrowColor">@color/colorAccent</color>
 
     <color name="white">#FFFFFF</color>
     <color name="gallery">#ECECEC</color>

@@ -8,7 +8,7 @@
     android:paddingTop="8dp"
     android:paddingEnd="16dp"
     android:paddingBottom="8dp"
-    tools:background="@color/black_80">
+    tools:background="?attr/bgColor">
 
     <ImageView
         android:id="@+id/add_button_on_list"
@@ -27,7 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:ellipsize="end"
-        android:textColor="@color/white"
+        android:textColor="?attr/textColor"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -41,7 +41,7 @@
         android:layout_marginStart="3dp"
         android:ellipsize="end"
         android:maxWidth="120dp"
-        android:textColor="@color/white"
+        android:textColor="?attr/textColor"
         app:layout_constraintBottom_toBottomOf="@+id/sticker_pack_title"
         app:layout_constraintStart_toEndOf="@+id/sticker_pack_title"
         app:layout_constraintTop_toTopOf="@+id/sticker_pack_title"
@@ -54,7 +54,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
         android:text="@string/dot"
-        android:textColor="@color/white"
+        android:textColor="?attr/textColor"
         app:layout_constraintBottom_toBottomOf="@+id/sticker_pack_publisher"
         app:layout_constraintStart_toEndOf="@+id/sticker_pack_publisher"
         app:layout_constraintTop_toTopOf="@+id/sticker_pack_publisher" />
@@ -65,7 +65,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="3dp"
-        android:textColor="@color/white"
+        android:textColor="?attr/textColor"
         app:layout_constraintBottom_toBottomOf="@+id/sticker_pack_list_item_dot"
         app:layout_constraintStart_toEndOf="@+id/sticker_pack_list_item_dot"
         app:layout_constraintTop_toTopOf="@+id/sticker_pack_list_item_dot"

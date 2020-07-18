@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="?attr/bgColor">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/include_toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/dark_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:text="@string/dark_mode"
+        android:textColor="?attr/textColor"
+        app:layout_constraintBottom_toTopOf="@+id/setup_items_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/app_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dp"
+        android:textColor="?attr/textColor"
+        app:layout_constraintBottom_toBottomOf="@+id/dark_mode"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/dark_mode"
+        tools:text="Version V.0.0.1" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/setup_items_view"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
+        android:background="?attr/bgColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/app_version">
+
+        <TextView
+            android:id="@+id/view_webpage"
+            style="@style/InfoButtonStyle"
+            android:drawableStart="@drawable/ic_linkedin"
+            android:drawableLeft="@drawable/ic_linkedin"
+            android:text="@string/view_webpage"
+            android:textColor="?attr/textColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/send_email"
+            style="@style/InfoButtonStyle"
+            android:drawableStart="@drawable/ic_email"
+            android:drawableLeft="@drawable/ic_email"
+            android:text="@string/send_email"
+            android:textColor="?attr/textColor"
+            app:layout_constraintEnd_toEndOf="@+id/view_webpage"
+            app:layout_constraintStart_toStartOf="@+id/view_webpage"
+            app:layout_constraintTop_toBottomOf="@+id/view_webpage" />
+
+        <TextView
+            android:id="@+id/privacy_policy"
+            style="@style/InfoButtonStyle"
+            android:drawableStart="@drawable/ic_padlock"
+            android:drawableLeft="@drawable/ic_padlock"
+            android:text="@string/privacy_policy"
+            android:textColor="?attr/textColor"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/send_email"
+            app:layout_constraintTop_toBottomOf="@+id/send_email"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/license_agreement"
+            style="@style/InfoButtonStyle"
+            android:drawableStart="@drawable/ic_menu"
+            android:drawableLeft="@drawable/ic_menu"
+            android:text="@string/license_agreement"
+            android:textColor="?attr/textColor"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@+id/privacy_policy"
+            app:layout_constraintStart_toStartOf="@+id/privacy_policy"
+            app:layout_constraintTop_toBottomOf="@+id/privacy_policy"
+            tools:visibility="visible" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

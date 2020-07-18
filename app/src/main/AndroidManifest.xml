@@ -17,32 +17,37 @@
         tools:ignore="GoogleAppIndexingWarning">
 
         <activity
-            android:name=".presentation.all.EntryActivity">
+            android:name=".presentation.home.SplashActivity"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:name=".presentation.all.StickerPackListActivity" />
+        <activity
+            android:name=".presentation.home.HomeActivity"
+            android:screenOrientation="portrait" />
 
         <activity
-            android:name=".presentation.all.StickerPackDetailsActivity"
-            android:parentActivityName=".presentation.all.StickerPackListActivity"
+            android:name=".presentation.home.DetailsPackActivity"
+            android:parentActivityName=".presentation.home.HomeActivity"
+            android:screenOrientation="portrait"
             tools:ignore="UnusedAttribute">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".presentation.all.StickerPackListActivity" />
+                android:value=".presentation.home.HomeActivity" />
         </activity>
 
         <activity
-            android:name=".presentation.all.StickerPackInfoActivity"
+            android:name=".presentation.info.view.StickerPackInfoActivity"
             android:label="@string/title_activity_sticker_pack_info"
-            android:parentActivityName=".presentation.all.StickerPackDetailsActivity"
+            android:parentActivityName=".presentation.home.DetailsPackActivity"
+            android:screenOrientation="portrait"
             tools:ignore="UnusedAttribute">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".presentation.all.StickerPackDetailsActivity" />
+                android:value=".presentation.home.DetailsPackActivity" />
         </activity>
 
         <meta-data
@@ -50,7 +55,7 @@
             android:value="ca-app-pub-9308496284214694~3508386708" />
 
         <provider
-            android:name=".presentation.all.StickerContentProvider"
+            android:name=".presentation.home.StickerContentProvider"
             android:authorities="${contentProviderAuthority}"
             android:enabled="true"
             android:exported="true"

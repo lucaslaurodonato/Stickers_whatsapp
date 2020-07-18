@@ -6,18 +6,13 @@
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-        <item name="actionBarTheme">@style/MyApp.ActionBarTheme</item>
+        <item name="textColor">@color/black</item>
+        <item name="bgColor">@color/white</item>
     </style>
 
-    <style name="AppTheme.Splash" parent="Theme.Design.NoActionBar">
-        <item name="colorPrimary">@color/colorPrimary</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
-        <item name="actionBarTheme">@style/MyApp.ActionBarTheme</item>
-    </style>
-
-    <style name="MyApp.ActionBarTheme" parent="@style/ThemeOverlay.MaterialComponents.ActionBar">
-        <item name="colorControlNormal">@color/actionBarArrowColor</item>
+    <style name="DarkTheme" parent="AppTheme">
+        <item name="textColor">@color/white</item>
+        <item name="bgColor">@color/black_80</item>
     </style>
 
     <style name="StickerPreviewButtonText" parent="Widget.MaterialComponents.Button.TextButton">
@@ -43,15 +38,13 @@
         <item name="android:minHeight">48dp</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:paddingLeft">31dp</item>
-        <item name="android:paddingStart" tools:targetApi="jelly_bean_mr1">24dp</item>
         <item name="android:layout_marginTop">8dp</item>
         <item name="android:drawablePadding">32dp</item>
         <item name="android:clickable">true</item>
-        <item name="android:foreground">?android:attr/selectableItemBackground</item>
     </style>
 
     <style name="AppTheme.BlackAccent">
-        <item name="colorAccent">@color/black</item> <!-- Whatever color you want-->
+        <item name="colorAccent">@color/black_80</item> <!-- Whatever color you want-->
     </style>
 
 </resources>
