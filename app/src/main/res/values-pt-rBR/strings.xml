@@ -35,6 +35,7 @@
     <string name="license_agreement">Contrato de licença</string>
     <string name="id_test_add">ca-app-pub-3940256099942544/6300978111</string>
     <string name="app_version_settings">Versão do aplicativo %s</string>
+    <string name="dark_mode">Tema escuro</string>
     <!-- Title of the sticker pack list activity page in case the app contains multiple sticker packs, the singular string will be used when there is only one pack in the app -->
     <plurals name="title_activity_sticker_packs_list">
         <item quantity="one">Pacote de figurinhas</item>

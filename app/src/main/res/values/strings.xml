@@ -47,5 +47,6 @@
 
     <!--App Version-->
     <string name="app_version_settings">"Version %s"</string>
+    <string name="dark_mode">Tema escuro</string>
 
 </resources>

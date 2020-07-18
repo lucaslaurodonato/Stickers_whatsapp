@@ -10,6 +10,7 @@ import android.view.ViewTreeObserver.OnGlobalLayoutListener
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import br.com.stickers.R
+import br.com.stickers.data.local.SharedPref
 import br.com.stickers.presentation.all.StickerPackLoader.getStickerAssetUri
 import br.com.stickers.mechanism.validator.WhitelistCheck.isWhitelisted
 import br.com.stickers.mechanism.addStickerPack.AddStickerPackActivity
@@ -41,9 +42,16 @@ class StickerPackDetailsActivity : AddStickerPackActivity() {
     private var numColumns = 0
     private var stickerPack: StickerPack? = null
     private var whiteListCheckAsyncTask: WhiteListCheckAsyncTask? = null
+    private lateinit var sharedPref: SharedPref
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        sharedPref = SharedPref(applicationContext)
+        if (sharedPref.loadNightModeState()) {
+            setTheme(R.style.DarkTheme)
+        } else {
+            setTheme(R.style.AppTheme)
+        }
         setContentView(R.layout.activity_sticker_pack_details)
         stickerPack = intent.getParcelableExtra(EXTRA_STICKER_PACK_DATA)
         setupAdMob()

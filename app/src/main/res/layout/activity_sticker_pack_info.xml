@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="?attr/bgColor">
 
     <include
         android:id="@+id/toolbar"
@@ -12,22 +13,34 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Switch
+        android:id="@+id/dark_mode"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:text="@string/dark_mode"
+        android:textColor="?attr/textColor"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
     <androidx.appcompat.widget.AppCompatTextView
         android:id="@+id/app_version"
-        android:layout_width="0dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="6dp"
-        android:gravity="end"
+        android:textColor="?attr/textColor"
+        app:layout_constraintBottom_toBottomOf="@+id/dark_mode"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="@+id/dark_mode"
         tools:text="Version V.0.0.1" />
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:background="@android:color/white"
-        android:orientation="vertical"
+        android:layout_marginTop="16dp"
+        android:background="?attr/bgColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -38,28 +51,44 @@
             style="@style/InfoButtonStyle"
             android:drawableStart="@drawable/ic_linkedin"
             android:drawableLeft="@drawable/ic_linkedin"
-            android:text="@string/view_webpage" />
+            android:text="@string/view_webpage"
+            android:textColor="?attr/textColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/send_email"
             style="@style/InfoButtonStyle"
             android:drawableStart="@drawable/ic_email"
             android:drawableLeft="@drawable/ic_email"
-            android:text="@string/send_email" />
+            android:text="@string/send_email"
+            android:textColor="?attr/textColor"
+            app:layout_constraintEnd_toEndOf="@+id/view_webpage"
+            app:layout_constraintStart_toStartOf="@+id/view_webpage"
+            app:layout_constraintTop_toBottomOf="@+id/view_webpage" />
 
         <TextView
             android:id="@+id/privacy_policy"
             style="@style/InfoButtonStyle"
             android:drawableStart="@drawable/sticker_3rdparty_privacy"
             android:drawableLeft="@drawable/sticker_3rdparty_privacy"
-            android:text="@string/privacy_policy" />
+            android:text="@string/privacy_policy"
+            android:textColor="?attr/textColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/send_email"
+            app:layout_constraintTop_toBottomOf="@+id/send_email" />
 
         <TextView
             android:id="@+id/license_agreement"
             style="@style/InfoButtonStyle"
             android:drawableStart="@drawable/sticker_3rdparty_license"
             android:drawableLeft="@drawable/sticker_3rdparty_license"
-            android:text="@string/license_agreement" />
+            android:text="@string/license_agreement"
+            android:textColor="?attr/textColor"
+            app:layout_constraintEnd_toEndOf="@+id/privacy_policy"
+            app:layout_constraintStart_toStartOf="@+id/privacy_policy"
+            app:layout_constraintTop_toBottomOf="@+id/privacy_policy" />
 
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

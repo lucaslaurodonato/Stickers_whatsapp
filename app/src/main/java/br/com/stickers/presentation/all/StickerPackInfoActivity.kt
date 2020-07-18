@@ -9,7 +9,9 @@ import android.view.View
 import android.view.View.GONE
 import android.widget.TextView
 import androidx.annotation.IdRes
+import androidx.appcompat.app.AppCompatDelegate
 import br.com.stickers.R
+import br.com.stickers.data.local.SharedPref
 import br.com.stickers.mechanism.AppUtils
 import br.com.stickers.presentation.base.view.BaseActivity
 import kotlinx.android.synthetic.main.activity_sticker_pack_details.toolbar
@@ -26,14 +28,45 @@ class StickerPackInfoActivity : BaseActivity() {
     private var email: String? = null
     private var privacyPolicy: String? = null
     private var licenseAgreement: String? = null
+    private lateinit var sharedPref: SharedPref
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        sharedPref = SharedPref(applicationContext)
+        if (sharedPref.loadNightModeState()) {
+            setTheme(R.style.DarkTheme)
+        } else {
+            setTheme(R.style.AppTheme)
+        }
         setContentView(R.layout.activity_sticker_pack_info)
         receiveDataToSetup()
         setupToolbar()
         setupItems()
         appVersion()
+        darkMode()
+    }
+
+    private fun darkMode() {
+        if (sharedPref.loadNightModeState()) {
+            dark_mode.isChecked = true
+        }
+
+        dark_mode.setOnCheckedChangeListener { _, b ->
+            if (b) {
+                sharedPref.setNightModeState(true)
+                restartApplication()
+            } else {
+                sharedPref.setNightModeState(false)
+                restartApplication()
+            }
+        }
+    }
+
+    private fun restartApplication() {
+        Intent(applicationContext, EntryActivity::class.java).let {
+            startActivity(it)
+            finish()
+        }
     }
 
     private fun appVersion() {

@@ -28,6 +28,7 @@ import java.util.Arrays;
 import java.util.List;
 
 import br.com.stickers.R;
+import br.com.stickers.data.local.SharedPref;
 import br.com.stickers.mechanism.addStickerPack.AddStickerPackActivity;
 import br.com.stickers.presentation.controller.StickerPackListItemViewHolder;
 import br.com.stickers.mechanism.validator.WhitelistCheck;
@@ -44,10 +45,17 @@ public class StickerPackListActivity extends AddStickerPackActivity {
     private WhiteListCheckAsyncTask whiteListCheckAsyncTask;
     private ArrayList<StickerPack> stickerPackList;
     private AdView mAdView;
+    private SharedPref sharedPref;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        sharedPref = new SharedPref(this);
+        if (sharedPref.loadNightModeState()) {
+            setTheme(R.style.DarkTheme);
+        } else {
+            setTheme(R.style.AppTheme);
+        }
         setContentView(R.layout.activity_sticker_pack_list);
         packRecyclerView = findViewById(R.id.sticker_pack_list);
         stickerPackList = getIntent().getParcelableArrayListExtra(EXTRA_STICKER_PACK_LIST_DATA);
