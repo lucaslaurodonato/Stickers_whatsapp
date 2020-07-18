@@ -65,6 +65,7 @@ public class HomeActivity extends AddStickerPackActivity {
             public void onClick(View view) {
                 Intent i = new Intent(HomeActivity.this, StickerPackInfoActivity.class);
                 startActivity(i);
+                finish();
             }
         });
     }

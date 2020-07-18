@@ -40,6 +40,11 @@ class StickerPackInfoActivity : BaseActivity() {
         receiveDataToSetup()
     }
 
+    override fun onBackPressed() {
+        super.onBackPressed()
+        restartApplication()
+    }
+
     private fun setupDialogLogout() {
         val title: String = if (sharedPref.loadNightModeState()) {
             getString(R.string.dark_mode_on)
