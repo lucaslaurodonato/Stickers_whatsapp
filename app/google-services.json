@@ -8,18 +8,18 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:844418402131:android:fa61b2be217e4b75fc03a6",
+        "mobilesdk_app_id": "1:844418402131:android:4ffbf2a07246471efc03a6",
         "android_client_info": {
-          "package_name": "br.com.stickers"
+          "package_name": "br.com.stickersbrasil"
         }
       },
       "oauth_client": [
         {
-          "client_id": "844418402131-5j5pdjobor3sgjfku4nqplk1q3a8jf6t.apps.googleusercontent.com",
+          "client_id": "844418402131-s3khradnn4tev3ov41vr7vcojkc84h6b.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "br.com.stickers",
-            "certificate_hash": "455b2947b4b5749bf327d85cb2fe21614356e262"
+            "package_name": "br.com.stickersbrasil",
+            "certificate_hash": "2bff2a2ed96bfdd32d86c28c3ed96094c3cba98a"
           }
         },
         {

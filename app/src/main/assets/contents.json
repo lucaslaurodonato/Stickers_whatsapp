@@ -4,7 +4,7 @@
   "sticker_packs": [
     {
       "identifier": "5",
-      "name": "Meme Pack 1",
+      "name": "Meme Pack I",
       "publisher": "Sticker Meme",
       "tray_image_file": "1_.webp",
       "image_data_version": "1",
@@ -95,7 +95,7 @@
     },
     {
       "identifier": "6",
-      "name": "Meme Pack 2",
+      "name": "Meme Pack II",
       "publisher": "Sticker Meme",
       "tray_image_file": "1_meme_2.webp",
       "image_data_version": "1",
@@ -235,7 +235,7 @@
     },
     {
       "identifier": "1",
-      "name": "Reddit Pack 1",
+      "name": "Reddit Pack I",
       "publisher": "Sticker Meme",
       "tray_image_file": "tray_tongue.png",
       "image_data_version": "1",
@@ -459,7 +459,7 @@
     },
     {
       "identifier": "2",
-      "name": "Reddit Pack 2",
+      "name": "Reddit Pack II",
       "publisher": "Sticker Meme",
       "tray_image_file": "neutral_face_tray.png",
       "image_data_version": "1",
@@ -610,7 +610,7 @@
     },
     {
       "identifier": "3",
-      "name": "Reddit Pack 3",
+      "name": "Reddit Pack III",
       "publisher": "Sticker Meme",
       "tray_image_file": "snoo_sad_tray.png",
       "image_data_version": "1",
@@ -861,7 +861,7 @@
     {
       "identifier": "7",
       "name": "Sad Cats",
-      "publisher": "Sticker Meme",
+      "publisher": "Gatos Meme I",
       "tray_image_file": "1_cat.webp",
       "image_data_version": "1_cat",
       "avoid_cache": false,
@@ -1021,7 +1021,7 @@
     },
     {
       "identifier": "8",
-      "name": "Meme Pack 3",
+      "name": "Meme Pack III",
       "publisher": "Sticker Meme",
       "tray_image_file": "1_meme_3.webp",
       "image_data_version": "1_meme_3",
@@ -1203,7 +1203,7 @@
     },
     {
       "identifier": "9",
-      "name": "Meme Pack 4",
+      "name": "Meme Pack IV",
       "publisher": "Sticker Meme",
       "tray_image_file": "1_meme_4.webp",
       "image_data_version": "1",
@@ -1385,7 +1385,7 @@
     },
     {
       "identifier": "10",
-      "name": "Meme Classico",
+      "name": "Memes Classicos",
       "publisher": "Sticker Meme",
       "tray_image_file": "1_meme_5.webp",
       "image_data_version": "1",
@@ -1567,7 +1567,7 @@
     },
     {
       "identifier": "11",
-      "name": "Meme Classico 2",
+      "name": "Memes Classicos II",
       "publisher": "Sticker Meme",
       "tray_image_file": "1_meme_6.webp",
       "image_data_version": "1",
@@ -1665,7 +1665,7 @@
     },
     {
       "identifier": "12",
-      "name": "Meme Classico II",
+      "name": "Memes Classicos III",
       "publisher": "Sticker Meme",
       "tray_image_file": "1_meme_classic_1.webp",
       "image_data_version": "1",
@@ -2064,7 +2064,7 @@
     },
     {
       "identifier": "14",
-      "name": "Grupo da Familia 2",
+      "name": "Grupo da Familia II",
       "publisher": "Sticker Meme",
       "tray_image_file": "1_group_2.webp",
       "image_data_version": "1",
@@ -2407,7 +2407,7 @@
     },
     {
       "identifier": "16",
-      "name": "Gatos 2",
+      "name": "Gatos II",
       "publisher": "Sticker Meme",
       "tray_image_file": "1_cat_3.webp",
       "image_data_version": "1",
@@ -2603,7 +2603,7 @@
     },
     {
       "identifier": "17",
-      "name": "Gatos 3",
+      "name": "Gatos III",
       "publisher": "Sticker Meme",
       "tray_image_file": "13_cat_4.webp",
       "image_data_version": "1",
