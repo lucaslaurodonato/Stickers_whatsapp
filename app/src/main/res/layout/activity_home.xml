@@ -41,7 +41,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="12dp"
         app:adSize="BANNER"
-        app:adUnitId="@string/id_test_add"
+        app:adUnitId="@string/id_home_prod"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar">

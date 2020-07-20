@@ -27,9 +27,11 @@
 
     <!--Id test admob-->
     <string name="id_test_add" translatable="false">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="id_test_intersticial" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
 
     <!--Id prod admob-->
     <string name="id_details_prod" translatable="false">ca-app-pub-9308496284214694/3809012873</string>
     <string name="id_home_prod" translatable="false">ca-app-pub-9308496284214694/5445420376</string>
+    <string name="id_intersticial_prod" translatable="false">ca-app-pub-9308496284214694/1457046233</string>
 
 </resources>

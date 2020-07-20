@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.AsyncTask
 import android.os.Bundle
 import android.text.format.Formatter
+import android.util.Log
 import android.view.View
 import android.view.View.GONE
 import android.view.ViewTreeObserver.OnGlobalLayoutListener
@@ -15,7 +16,9 @@ import br.com.stickers.data.local.SharedPref
 import br.com.stickers.presentation.home.StickerPackLoader.getStickerAssetUri
 import br.com.stickers.mechanism.validator.WhitelistCheck.isWhitelisted
 import br.com.stickers.mechanism.addStickerPack.AddStickerPackActivity
+import com.google.android.gms.ads.AdListener
 import com.google.android.gms.ads.AdRequest
+import com.google.android.gms.ads.InterstitialAd
 import com.google.android.gms.ads.MobileAds
 import kotlinx.android.synthetic.main.activity_details_pack.*
 import kotlinx.android.synthetic.main.include_toolbar.view.*
@@ -26,6 +29,7 @@ class DetailsPackActivity : AddStickerPackActivity() {
     companion object {
         fun getStartIntent(context: Context) =
             Intent(context, DetailsPackActivity::class.java)
+
         const val EXTRA_STICKER_PACK_ID = "sticker_pack_id"
         const val EXTRA_STICKER_PACK_AUTHORITY = "sticker_pack_authority"
         const val EXTRA_STICKER_PACK_NAME = "sticker_pack_name"
@@ -40,6 +44,7 @@ class DetailsPackActivity : AddStickerPackActivity() {
     private var stickerPack: StickerPack? = null
     private var whiteListCheckAsyncTask: WhiteListCheckAsyncTask? = null
     private lateinit var sharedPref: SharedPref
+    private lateinit var interstitialAd: InterstitialAd
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +59,13 @@ class DetailsPackActivity : AddStickerPackActivity() {
         setupAdMob()
         setupToolbar()
         setupRecyclerView()
+        showInterstitialAd()
+    }
+
+    private fun showInterstitialAd() {
+        interstitialAd = InterstitialAd(this)
+        interstitialAd.adUnitId = getString(R.string.id_intersticial_prod)
+        interstitialAd.loadAd(AdRequest.Builder().build())
     }
 
     override fun onResume() {
@@ -100,10 +112,22 @@ class DetailsPackActivity : AddStickerPackActivity() {
         pack_size.text = Formatter.formatShortFileSize(this, stickerPack!!.totalSize)
 
         add_to_whatsapp_button.setOnClickListener { v: View? ->
-            addStickerPackToWhatsApp(
-                stickerPack!!.identifier,
-                stickerPack!!.name
-            )
+            if (interstitialAd.isLoaded) {
+                interstitialAd.show()
+                interstitialAd.adListener = object : AdListener() {
+                    override fun onAdClosed() {
+                        addStickerPackToWhatsApp(
+                            stickerPack!!.identifier,
+                            stickerPack!!.name
+                        )
+                    }
+                }
+            } else {
+                addStickerPackToWhatsApp(
+                    stickerPack!!.identifier,
+                    stickerPack!!.name
+                )
+            }
         }
     }
 

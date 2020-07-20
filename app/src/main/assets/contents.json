@@ -860,7 +860,7 @@
     },
     {
       "identifier": "7",
-      "name": "Cats Meme",
+      "name": "Sad Cats",
       "publisher": "Sticker Meme",
       "tray_image_file": "1_cat.webp",
       "image_data_version": "1_cat",
@@ -1130,13 +1130,6 @@
           ]
         },
         {
-          "image_file": "15_meme_3.webp",
-          "emojis": [
-            "😎",
-            ""
-          ]
-        },
-        {
           "image_file": "16_meme_3.webp",
           "emojis": [
             "🤦",
@@ -1183,13 +1176,6 @@
           "emojis": [
             "🤗",
             ""
-          ]
-        },
-        {
-          "image_file": "23_meme_3.webp",
-          "emojis": [
-            "😒",
-            "😟"
           ]
         },
         {
@@ -1371,13 +1357,6 @@
           "image_file": "21_meme_4.webp",
           "emojis": [
             "😍",
-            ""
-          ]
-        },
-        {
-          "image_file": "22_meme_4.webp",
-          "emojis": [
-            "🤗",
             ""
           ]
         },
@@ -1686,7 +1665,7 @@
     },
     {
       "identifier": "12",
-      "name": "Meme Classico Brasil",
+      "name": "Meme Classico II",
       "publisher": "Sticker Meme",
       "tray_image_file": "1_meme_classic_1.webp",
       "image_data_version": "1",
@@ -1763,13 +1742,6 @@
           "image_file": "10_meme_classic_1.webp",
           "emojis": [
             "😢",
-            ""
-          ]
-        },
-        {
-          "image_file": "11_meme_classic_1.webp",
-          "emojis": [
-            "😭",
             ""
           ]
         },
