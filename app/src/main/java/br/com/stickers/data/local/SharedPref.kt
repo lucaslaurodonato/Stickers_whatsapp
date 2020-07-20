@@ -9,7 +9,7 @@ class SharedPref(context: Context) {
 
     fun setNightModeState(state: Boolean) {
         val editor = mySharedPref.edit()
-        state?.let { editor.putBoolean("Dark", it) }
+        state.let { editor.putBoolean("Dark", it) }
         editor.apply()
     }
 
