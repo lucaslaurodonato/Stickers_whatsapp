@@ -3,10 +3,10 @@
   "ios_app_store_link": "",
   "sticker_packs": [
     {
-      "identifier": "1",
-      "name": "Meme Pack 1",
+      "identifier": "4",
+      "name": "Cachorros Pack I",
       "publisher": "Stickers Dogs",
-      "tray_image_file": "1_.webp",
+      "tray_image_file": "dogs_pack_4_1.webp",
       "image_data_version": "1",
       "avoid_cache": false,
       "publisher_email": "lucaslaurodonato@hotmail.com",
@@ -15,77 +15,602 @@
       "license_agreement_website": "",
       "stickers": [
         {
-          "image_file": "1_.webp",
+          "image_file": "dogs_pack_4_1.webp",
           "emojis": [
             "😍",
             ""
           ]
         },
         {
-          "image_file": "2_.webp",
+          "image_file": "dogs_pack_4_2.webp",
           "emojis": [
             "😄",
             "😀"
           ]
         },
         {
-          "image_file": "3_.webp",
+          "image_file": "dogs_pack_4_3.webp",
           "emojis": [
             "😆",
             "😂"
           ]
         },
         {
-          "image_file": "4_.webp",
+          "image_file": "dogs_pack_4_4.webp",
           "emojis": [
             "🙂",
             "😊"
           ]
         },
         {
-          "image_file": "5_.webp",
+          "image_file": "dogs_pack_4_5.webp",
           "emojis": [
             "😌",
             ""
           ]
         },
         {
-          "image_file": "6_.webp",
+          "image_file": "dogs_pack_4_6.webp",
           "emojis": [
             "😄",
             ""
           ]
         },
         {
-          "image_file": "7_.webp",
+          "image_file": "dogs_pack_4_7.webp",
           "emojis": [
             "😂",
             ""
           ]
         },
         {
-          "image_file": "8_.webp",
+          "image_file": "dogs_pack_4_8.webp",
           "emojis": [
             "😋",
             ""
           ]
         },
         {
-          "image_file": "9_.webp",
+          "image_file": "dogs_pack_4_9.webp",
           "emojis": [
             "😉",
             ""
           ]
         },
         {
-          "image_file": "10_.webp",
+          "image_file": "dogs_pack_4_10.webp",
           "emojis": [
             "😢",
             ""
           ]
         },
         {
-          "image_file": "11_.webp",
+          "image_file": "dogs_pack_4_11.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_4_12.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_4_13.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_4_14.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_4_15.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_4_16.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_4_17.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_4_18.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_4_19.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_4_20.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_4_21.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_4_22.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_4_23.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_4_24.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_4_25.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_4_26.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_4_27.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_4_28.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_4_29.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_4_30.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "8",
+      "name": "Cachorros Pack II",
+      "publisher": "Stickers Dogs",
+      "tray_image_file": "dogs_pack_8_1.webp",
+      "image_data_version": "1",
+      "avoid_cache": false,
+      "publisher_email": "lucaslaurodonato@hotmail.com",
+      "publisher_website": "https://www.linkedin.com/in/lucaslaurodonato/",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "dogs_pack_8_1.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_2.webp",
+          "emojis": [
+            "😄",
+            "😀"
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_3.webp",
+          "emojis": [
+            "😆",
+            "😂"
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_4.webp",
+          "emojis": [
+            "🙂",
+            "😊"
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_5.webp",
+          "emojis": [
+            "😌",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_6.webp",
+          "emojis": [
+            "😄",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_7.webp",
+          "emojis": [
+            "😋",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_8.webp",
+          "emojis": [
+            "😉",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_9.webp",
+          "emojis": [
+            "😢",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_10.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_11.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_12.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_13.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_14.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_15.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_16.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_17.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_18.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_19.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_20.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_21.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_22.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_23.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_24.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_25.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_26.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_27.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_28.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_8_29.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+    "identifier": "1",
+      "name": "Cachorros Pack III",
+      "publisher": "Stickers Dogs",
+      "tray_image_file": "dogs_pack_1_1.webp",
+      "image_data_version": "1",
+      "avoid_cache": false,
+      "publisher_email": "lucaslaurodonato@hotmail.com",
+      "publisher_website": "https://www.linkedin.com/in/lucaslaurodonato/",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "dogs_pack_1_1.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_2.webp",
+          "emojis": [
+            "😄",
+            "😀"
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_3.webp",
+          "emojis": [
+            "😆",
+            "😂"
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_4.webp",
+          "emojis": [
+            "🙂",
+            "😊"
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_5.webp",
+          "emojis": [
+            "😌",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_6.webp",
+          "emojis": [
+            "😄",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_7.webp",
+          "emojis": [
+            "😂",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_8.webp",
+          "emojis": [
+            "😋",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_9.webp",
+          "emojis": [
+            "😉",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_10.webp",
+          "emojis": [
+            "😢",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_11.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_12.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_14.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_15.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_16.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_17.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_18.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_19.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_20.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_21.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_22.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_23.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_1_24.webp",
           "emojis": [
             "😭",
             ""
@@ -95,9 +620,9 @@
     },
     {
       "identifier": "2",
-      "name": "Meme Pack 1",
+      "name": "Cachorros Pack IV",
       "publisher": "Stickers Dogs",
-      "tray_image_file": "1.webp",
+      "tray_image_file": "dogs_pack_2_1.webp",
       "image_data_version": "1",
       "avoid_cache": false,
       "publisher_email": "lucaslaurodonato@hotmail.com",
@@ -106,23 +631,807 @@
       "license_agreement_website": "",
       "stickers": [
         {
-          "image_file": "1.webp",
+          "image_file": "dogs_pack_2_1.webp",
           "emojis": [
             "😍",
             ""
           ]
         },
         {
-          "image_file": "2.webp",
+          "image_file": "dogs_pack_2_2.webp",
           "emojis": [
             "😍",
             ""
           ]
         },
         {
-          "image_file": "3.webp",
+          "image_file": "dogs_pack_2_3.webp",
           "emojis": [
             "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_2_4.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_2_5.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_2_6.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_2_7.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_2_8.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_2_9.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_2_10.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_2_11.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_2_12.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_2_13.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_2_14.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_2_15.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_2_16.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_2_17.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_2_18.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_2_19.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_2_20.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_2_21.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_2_22.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "3",
+      "name": "Cachorros Pack V",
+      "publisher": "Stickers Dogs II",
+      "tray_image_file": "dogs_pack_3_1.webp",
+      "image_data_version": "1",
+      "avoid_cache": false,
+      "publisher_email": "lucaslaurodonato@hotmail.com",
+      "publisher_website": "https://www.linkedin.com/in/lucaslaurodonato/",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "dogs_pack_3_1.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_3_2.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_3_3.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_3_4.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_3_5.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_3_6.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_3_7.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_3_8.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_3_9.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_3_10.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_3_11.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_3_12.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "5",
+      "name": "Cachorros Pack VI",
+      "publisher": "Stickers Dogs",
+      "tray_image_file": "dogs_pack_5_1.webp",
+      "image_data_version": "1",
+      "avoid_cache": false,
+      "publisher_email": "lucaslaurodonato@hotmail.com",
+      "publisher_website": "https://www.linkedin.com/in/lucaslaurodonato/",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "dogs_pack_5_1.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_2.webp",
+          "emojis": [
+            "😄",
+            "😀"
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_3.webp",
+          "emojis": [
+            "😆",
+            "😂"
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_4.webp",
+          "emojis": [
+            "🙂",
+            "😊"
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_5.webp",
+          "emojis": [
+            "😌",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_6.webp",
+          "emojis": [
+            "😄",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_7.webp",
+          "emojis": [
+            "😂",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_8.webp",
+          "emojis": [
+            "😋",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_9.webp",
+          "emojis": [
+            "😉",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_10.webp",
+          "emojis": [
+            "😢",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_11.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_12.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_13.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_14.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_15.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_16.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_17.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_18.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_19.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_20.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_21.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_22.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_23.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_5_24.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "6",
+      "name": "Cachorros Pack VII",
+      "publisher": "Stickers Dogs",
+      "tray_image_file": "dogs_pack_6_1.webp",
+      "image_data_version": "1",
+      "avoid_cache": false,
+      "publisher_email": "lucaslaurodonato@hotmail.com",
+      "publisher_website": "https://www.linkedin.com/in/lucaslaurodonato/",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "dogs_pack_6_1.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_2.webp",
+          "emojis": [
+            "😄",
+            "😀"
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_3.webp",
+          "emojis": [
+            "😆",
+            "😂"
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_4.webp",
+          "emojis": [
+            "🙂",
+            "😊"
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_5.webp",
+          "emojis": [
+            "😌",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_6.webp",
+          "emojis": [
+            "😄",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_8.webp",
+          "emojis": [
+            "😋",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_9.webp",
+          "emojis": [
+            "😉",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_10.webp",
+          "emojis": [
+            "😢",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_11.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_12.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_13.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_14.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_15.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_16.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_17.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_18.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_19.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_20.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_22.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_23.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_24.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_25.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_26.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_27.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_28.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_6_29.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "7",
+      "name": "Cachorros Pack VIII",
+      "publisher": "Stickers Dogs",
+      "tray_image_file": "dogs_pack_7_1.webp",
+      "image_data_version": "1",
+      "avoid_cache": false,
+      "publisher_email": "lucaslaurodonato@hotmail.com",
+      "publisher_website": "https://www.linkedin.com/in/lucaslaurodonato/",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "dogs_pack_7_1.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_2.webp",
+          "emojis": [
+            "😄",
+            "😀"
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_3.webp",
+          "emojis": [
+            "😆",
+            "😂"
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_4.webp",
+          "emojis": [
+            "🙂",
+            "😊"
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_5.webp",
+          "emojis": [
+            "😌",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_6.webp",
+          "emojis": [
+            "😄",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_7.webp",
+          "emojis": [
+            "😋",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_8.webp",
+          "emojis": [
+            "😉",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_9.webp",
+          "emojis": [
+            "😢",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_10.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_11.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_12.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_13.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_14.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_15.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_16.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_17.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_18.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_19.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_20.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_21.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "dogs_pack_7_22.webp",
+          "emojis": [
+            "😭",
             ""
           ]
         }
