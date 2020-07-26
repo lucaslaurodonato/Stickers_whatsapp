@@ -92,6 +92,41 @@
           ]
         }
       ]
+    },
+    {
+      "identifier": "2",
+      "name": "Meme Pack 1",
+      "publisher": "Stickers Dogs",
+      "tray_image_file": "1.webp",
+      "image_data_version": "1",
+      "avoid_cache": false,
+      "publisher_email": "lucaslaurodonato@hotmail.com",
+      "publisher_website": "https://www.linkedin.com/in/lucaslaurodonato/",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "1.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "2.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "3.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        }
+      ]
     }
   ]
 }
