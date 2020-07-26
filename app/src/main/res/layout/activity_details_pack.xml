@@ -76,7 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/author"
         tools:text="Size" />
 
-    <br.com.stickers.mechanism.bottomRecycler.BottomFadingRecyclerView
+    <br.com.stickersdogs.mechanism.bottomRecycler.BottomFadingRecyclerView
         android:id="@+id/sticker_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -98,7 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
         android:layout_marginBottom="6dp"
-        android:background="@drawable/btn_green"
+        android:background="@drawable/btn_blue"
         android:clickable="true"
         android:focusable="true"
         android:foreground="?attr/selectableItemBackgroundBorderless"
@@ -112,7 +112,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:background="@drawable/btn_green"
+            android:background="@drawable/btn_blue"
             android:clickable="false"
             android:drawableStart="@drawable/sticker_3rdparty_wa"
             android:drawableLeft="@drawable/sticker_3rdparty_wa"
@@ -129,7 +129,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="6dp"
         app:adSize="BANNER"
-        app:adUnitId="@string/id_details_prod"
+        app:adUnitId="@string/id_test_add"
         app:layout_constraintEnd_toStartOf="@+id/guideline_end"
         app:layout_constraintStart_toStartOf="@+id/guideline_start"
         app:layout_constraintTop_toBottomOf="@+id/pack_size">

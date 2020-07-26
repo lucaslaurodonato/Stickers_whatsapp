@@ -12,7 +12,7 @@
 
     <style name="DarkTheme" parent="AppTheme">
         <item name="textColor">@color/white</item>
-        <item name="bgColor">@color/black_80</item>
+        <item name="bgColor">@color/wet_asphalt</item>
     </style>
 
     <style name="StickerPreviewButtonText" parent="Widget.MaterialComponents.Button.TextButton">
