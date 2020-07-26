@@ -76,7 +76,7 @@
         app:layout_constraintTop_toBottomOf="@+id/author"
         tools:text="Size" />
 
-    <br.com.stickersdogs.mechanism.bottomRecycler.BottomFadingRecyclerView
+    <br.com.stickersbrasil.mechanism.bottomRecycler.BottomFadingRecyclerView
         android:id="@+id/sticker_list"
         android:layout_width="0dp"
         android:layout_height="0dp"

@@ -28,15 +28,15 @@ android {
                 "\"${contentProviderAuthority}\"")
     }
 
-//    signingConfigs {
-//
-//        release {
-//            storeFile file('keys/keystore_release.jks')
-//            keyAlias 'stickersmeme'
-//            keyPassword '1309donatos11'
-//            storePassword '1309donatos11'
-//        }
-//    }
+    signingConfigs {
+
+        release {
+            storeFile file('keys/keystore_release_dog.jks')
+            keyAlias 'stickersdogs'
+            keyPassword '1309donatos123'
+            storePassword '1309donatos123'
+        }
+    }
 
     buildTypes {
         debug {
@@ -44,12 +44,12 @@ android {
             shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
-//        release {
-//            minifyEnabled true
-//            shrinkResources true
-//            signingConfig signingConfigs.release
-//            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-//        }
+        release {
+            minifyEnabled true
+            shrinkResources true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
     }
     compileOptions {
         sourceCompatibility = '1.8'
