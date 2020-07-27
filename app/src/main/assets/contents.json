@@ -4,8 +4,8 @@
   "sticker_packs": [
     {
       "identifier": "5",
-      "name": "Meme Pack I",
-      "publisher": "Sticker Meme",
+      "name": "Stickers Pack 1",
+      "publisher": "Stickers Memes Brasil",
       "tray_image_file": "1_.webp",
       "image_data_version": "1",
       "avoid_cache": false,
@@ -95,8 +95,8 @@
     },
     {
       "identifier": "6",
-      "name": "Meme Pack II",
-      "publisher": "Sticker Meme",
+      "name": "Stickers Pack 2",
+      "publisher": "Stickers Memes Brasil",
       "tray_image_file": "1_meme_2.webp",
       "image_data_version": "1",
       "avoid_cache": false,
@@ -235,8 +235,8 @@
     },
     {
       "identifier": "1",
-      "name": "Reddit Pack I",
-      "publisher": "Sticker Meme",
+      "name": "Reddit Pack 1",
+      "publisher": "Stickers Memes Brasil",
       "tray_image_file": "tray_tongue.png",
       "image_data_version": "1",
       "avoid_cache": false,
@@ -459,8 +459,8 @@
     },
     {
       "identifier": "2",
-      "name": "Reddit Pack II",
-      "publisher": "Sticker Meme",
+      "name": "Reddit Pack 2",
+      "publisher": "Stickers Memes Brasil",
       "tray_image_file": "neutral_face_tray.png",
       "image_data_version": "1",
       "avoid_cache": false,
@@ -610,8 +610,8 @@
     },
     {
       "identifier": "3",
-      "name": "Reddit Pack III",
-      "publisher": "Sticker Meme",
+      "name": "Reddit Pack 3",
+      "publisher": "Stickers Memes Brasil",
       "tray_image_file": "snoo_sad_tray.png",
       "image_data_version": "1",
       "avoid_cache": false,
@@ -672,7 +672,7 @@
     {
       "identifier": "4",
       "name": "Grupo da familia",
-      "publisher": "Sticker Meme",
+      "publisher": "Stickers Memes Brasil",
       "tray_image_file": "1.webp",
       "image_data_version": "1",
       "avoid_cache": false,
@@ -860,8 +860,8 @@
     },
     {
       "identifier": "7",
-      "name": "Sad Cats",
-      "publisher": "Gatos Meme I",
+      "name": "Stickers de gato",
+      "publisher": "Stickers Memes Brasil",
       "tray_image_file": "1_cat.webp",
       "image_data_version": "1_cat",
       "avoid_cache": false,
@@ -1021,8 +1021,8 @@
     },
     {
       "identifier": "8",
-      "name": "Meme Pack III",
-      "publisher": "Sticker Meme",
+      "name": "Stickers Pack 3",
+      "publisher": "Stickers Memes Brasil",
       "tray_image_file": "1_meme_3.webp",
       "image_data_version": "1_meme_3",
       "avoid_cache": false,
@@ -1203,8 +1203,8 @@
     },
     {
       "identifier": "9",
-      "name": "Meme Pack IV",
-      "publisher": "Sticker Meme",
+      "name": "Stickers Pack 4",
+      "publisher": "Stickers Memes Brasil",
       "tray_image_file": "1_meme_4.webp",
       "image_data_version": "1",
       "avoid_cache": false,
@@ -1385,8 +1385,8 @@
     },
     {
       "identifier": "10",
-      "name": "Memes Classicos",
-      "publisher": "Sticker Meme",
+      "name": "Stickers Pack 5",
+      "publisher": "Stickers Memes Brasil",
       "tray_image_file": "1_meme_5.webp",
       "image_data_version": "1",
       "avoid_cache": false,
@@ -1567,8 +1567,8 @@
     },
     {
       "identifier": "11",
-      "name": "Memes Classicos II",
-      "publisher": "Sticker Meme",
+      "name": "Stickers Pack 6",
+      "publisher": "Stickers Memes Brasil",
       "tray_image_file": "1_meme_6.webp",
       "image_data_version": "1",
       "avoid_cache": false,
@@ -1665,8 +1665,8 @@
     },
     {
       "identifier": "12",
-      "name": "Memes Classicos III",
-      "publisher": "Sticker Meme",
+      "name": "Stickers Pack 7",
+      "publisher": "Stickers Memes Brasil",
       "tray_image_file": "1_meme_classic_1.webp",
       "image_data_version": "1",
       "avoid_cache": false,
@@ -1883,7 +1883,7 @@
     {
       "identifier": "13",
       "name": "Frases desmotivacionais",
-      "publisher": "Sticker Meme",
+      "publisher": "Stickers Memes Brasil",
       "tray_image_file": "1_phrases.webp",
       "image_data_version": "1",
       "avoid_cache": false,
@@ -2064,8 +2064,8 @@
     },
     {
       "identifier": "14",
-      "name": "Grupo da Familia II",
-      "publisher": "Sticker Meme",
+      "name": "Grupo da Familia 2",
+      "publisher": "Stickers Memes Brasil",
       "tray_image_file": "1_group_2.webp",
       "image_data_version": "1",
       "avoid_cache": false,
@@ -2268,7 +2268,7 @@
     {
       "identifier": "15",
       "name": "Gatos com coração",
-      "publisher": "Sticker Meme",
+      "publisher": "Stickers Memes Brasil",
       "tray_image_file": "1_cat_2.webp",
       "image_data_version": "1_cat_2",
       "avoid_cache": false,
@@ -2407,8 +2407,8 @@
     },
     {
       "identifier": "16",
-      "name": "Gatos II",
-      "publisher": "Sticker Meme",
+      "name": "Memes de gatos 2",
+      "publisher": "Stickers Memes Brasil",
       "tray_image_file": "1_cat_3.webp",
       "image_data_version": "1",
       "avoid_cache": false,
@@ -2603,8 +2603,8 @@
     },
     {
       "identifier": "17",
-      "name": "Gatos III",
-      "publisher": "Sticker Meme",
+      "name": "Memes de gatos 3",
+      "publisher": "Stickers Memes Brasil",
       "tray_image_file": "13_cat_4.webp",
       "image_data_version": "1",
       "avoid_cache": false,
@@ -2727,6 +2727,720 @@
         },
         {
           "image_file": "17_cat_4.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "18",
+      "name": "Stickers Pack 8",
+      "publisher": "Stickers Memes Brasil",
+      "tray_image_file": "meme_pack_18_1.webp",
+      "image_data_version": "1",
+      "avoid_cache": false,
+      "publisher_email": "lucaslaurodonato@hotmail.com",
+      "publisher_website": "https://www.linkedin.com/in/lucaslaurodonato/",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "meme_pack_18_1.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_2.webp",
+          "emojis": [
+            "😄",
+            "😀"
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_3.webp",
+          "emojis": [
+            "😆",
+            "😂"
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_4.webp",
+          "emojis": [
+            "🙂",
+            "😊"
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_5.webp",
+          "emojis": [
+            "😌",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_6.webp",
+          "emojis": [
+            "😄",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_7.webp",
+          "emojis": [
+            "😂",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_8.webp",
+          "emojis": [
+            "😋",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_9.webp",
+          "emojis": [
+            "😉",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_10.webp",
+          "emojis": [
+            "😢",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_11.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_12.webp",
+          "emojis": [
+            "😡",
+            "😠"
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_13.webp",
+          "emojis": [
+            "😑",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_14.webp",
+          "emojis": [
+            "😜",
+            "😝"
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_15.webp",
+          "emojis": [
+            "😎",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_16.webp",
+          "emojis": [
+            "🤦",
+            "🤦"
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_17.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_17.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_18.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_19.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_20.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_21.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_22.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_23.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_18_24.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "19",
+      "name": "Stickers Pack 9",
+      "publisher": "Stickers Memes Brasil",
+      "tray_image_file": "meme_pack_19_1.webp",
+      "image_data_version": "1",
+      "avoid_cache": false,
+      "publisher_email": "lucaslaurodonato@hotmail.com",
+      "publisher_website": "https://www.linkedin.com/in/lucaslaurodonato/",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "meme_pack_19_1.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_19_2.webp",
+          "emojis": [
+            "😄",
+            "😀"
+          ]
+        },
+        {
+          "image_file": "meme_pack_19_3.webp",
+          "emojis": [
+            "😆",
+            "😂"
+          ]
+        },
+        {
+          "image_file": "meme_pack_19_4.webp",
+          "emojis": [
+            "🙂",
+            "😊"
+          ]
+        },
+        {
+          "image_file": "meme_pack_19_5.webp",
+          "emojis": [
+            "😌",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_19_6.webp",
+          "emojis": [
+            "😄",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_19_7.webp",
+          "emojis": [
+            "😂",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_19_8.webp",
+          "emojis": [
+            "😋",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_19_9.webp",
+          "emojis": [
+            "😉",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_19_10.webp",
+          "emojis": [
+            "😢",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_19_11.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_19_12.webp",
+          "emojis": [
+            "😡",
+            "😠"
+          ]
+        },
+        {
+          "image_file": "meme_pack_19_13.webp",
+          "emojis": [
+            "😑",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_19_14.webp",
+          "emojis": [
+            "😜",
+            "😝"
+          ]
+        },
+        {
+          "image_file": "meme_pack_19_15.webp",
+          "emojis": [
+            "😎",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_19_16.webp",
+          "emojis": [
+            "🤦",
+            "🤦"
+          ]
+        },
+        {
+          "image_file": "meme_pack_19_17.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_19_18.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_19_19.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_19_20.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "20",
+      "name": "Stickers Pack 10",
+      "publisher": "Stickers Memes Brasil",
+      "tray_image_file": "meme_pack_20_1.webp",
+      "image_data_version": "1",
+      "avoid_cache": false,
+      "publisher_email": "lucaslaurodonato@hotmail.com",
+      "publisher_website": "https://www.linkedin.com/in/lucaslaurodonato/",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "meme_pack_20_1.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_2.webp",
+          "emojis": [
+            "😄",
+            "😀"
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_3.webp",
+          "emojis": [
+            "😆",
+            "😂"
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_4.webp",
+          "emojis": [
+            "🙂",
+            "😊"
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_5.webp",
+          "emojis": [
+            "😌",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_6.webp",
+          "emojis": [
+            "😄",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_7.webp",
+          "emojis": [
+            "😂",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_8.webp",
+          "emojis": [
+            "😋",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_9.webp",
+          "emojis": [
+            "😉",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_10.webp",
+          "emojis": [
+            "😢",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_11.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_12.webp",
+          "emojis": [
+            "😡",
+            "😠"
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_13.webp",
+          "emojis": [
+            "😑",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_14.webp",
+          "emojis": [
+            "😜",
+            "😝"
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_15.webp",
+          "emojis": [
+            "😎",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_16.webp",
+          "emojis": [
+            "🤦",
+            "🤦"
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_17.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_18.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_19.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_20.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_21.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_22.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_23.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_24.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_25.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_26.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_20_27.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        }
+      ]
+    },
+    {
+      "identifier": "21",
+      "name": "Stickers Pack 11",
+      "publisher": "Stickers Memes Brasil",
+      "tray_image_file": "meme_pack_21_1.webp",
+      "image_data_version": "1",
+      "avoid_cache": false,
+      "publisher_email": "lucaslaurodonato@hotmail.com",
+      "publisher_website": "https://www.linkedin.com/in/lucaslaurodonato/",
+      "privacy_policy_website": "",
+      "license_agreement_website": "",
+      "stickers": [
+        {
+          "image_file": "meme_pack_21_1.webp",
+          "emojis": [
+            "😍",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_2.webp",
+          "emojis": [
+            "😄",
+            "😀"
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_3.webp",
+          "emojis": [
+            "😆",
+            "😂"
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_4.webp",
+          "emojis": [
+            "🙂",
+            "😊"
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_5.webp",
+          "emojis": [
+            "😌",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_6.webp",
+          "emojis": [
+            "😄",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_7.webp",
+          "emojis": [
+            "😂",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_8.webp",
+          "emojis": [
+            "😋",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_9.webp",
+          "emojis": [
+            "😉",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_10.webp",
+          "emojis": [
+            "😢",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_11.webp",
+          "emojis": [
+            "😭",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_12.webp",
+          "emojis": [
+            "😡",
+            "😠"
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_13.webp",
+          "emojis": [
+            "😑",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_14.webp",
+          "emojis": [
+            "😜",
+            "😝"
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_15.webp",
+          "emojis": [
+            "😎",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_16.webp",
+          "emojis": [
+            "🤦",
+            "🤦"
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_17.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_18.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_19.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_20.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_21.webp",
+          "emojis": [
+            "🤷",
+            "🤷"
+          ]
+        },
+        {
+          "image_file": "meme_pack_21_22.webp",
           "emojis": [
             "🤷",
             "🤷"
