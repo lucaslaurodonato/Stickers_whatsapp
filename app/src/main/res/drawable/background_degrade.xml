@@ -3,8 +3,8 @@
     <solid android:color="@color/whatsapp_green" />
     <gradient
         android:angle="45"
-        android:centerColor="@color/sun_flower"
-        android:endColor="@color/carrot"
-        android:startColor="@color/pomegranate" />
+        android:centerColor="@color/wisteria"
+        android:endColor="@color/chi_gong"
+        android:startColor="@color/belize_hole" />
 
 </shape>

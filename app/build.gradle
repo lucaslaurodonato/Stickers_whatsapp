@@ -31,8 +31,8 @@ android {
     signingConfigs {
 
         release {
-            storeFile file('keys/keystore_release_dog.jks')
-            keyAlias 'stickersdogs'
+            storeFile file('keys/keystore_release_cat.jks')
+            keyAlias 'stickerscats'
             keyPassword '1309donatos123'
             storePassword '1309donatos123'
         }
