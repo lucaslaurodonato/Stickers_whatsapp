@@ -30,8 +30,8 @@
     <string name="id_test_intersticial" translatable="false">ca-app-pub-3940256099942544/1033173712</string>
 
     <!--Id prod admob-->
-    <string name="id_details_prod" translatable="false">ca-app-pub-9308496284214694/6872964376</string>
-    <string name="id_home_prod" translatable="false">ca-app-pub-9308496284214694/8186046046</string>
-    <string name="id_intersticial_prod" translatable="false">ca-app-pub-9308496284214694/4246801031</string>
+    <string name="id_details_prod" translatable="false">ca-app-pub-9308496284214694/9501097338</string>
+    <string name="id_home_prod" translatable="false">ca-app-pub-9308496284214694/8632644890</string>
+    <string name="id_intersticial_prod" translatable="false">ca-app-pub-9308496284214694/2067236544</string>
 
 </resources>
