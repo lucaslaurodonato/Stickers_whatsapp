@@ -10,7 +10,7 @@ android {
     buildToolsVersion "30.0.0"
 
     defaultConfig {
-        applicationId "br.com.stickers"
+        applicationId "br.com.stickersbrasil"
         minSdkVersion 19
         targetSdkVersion 30
         versionCode 4

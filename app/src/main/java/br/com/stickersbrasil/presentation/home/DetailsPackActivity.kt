@@ -63,7 +63,7 @@ class DetailsPackActivity : AddStickerPackActivity() {
 
     private fun showInterstitialAd() {
         interstitialAd = InterstitialAd(this)
-        interstitialAd.adUnitId = getString(R.string.id_intersticial_prod)
+        interstitialAd.adUnitId = getString(R.string.id_test_intersticial)
         interstitialAd.loadAd(AdRequest.Builder().build())
     }
 
