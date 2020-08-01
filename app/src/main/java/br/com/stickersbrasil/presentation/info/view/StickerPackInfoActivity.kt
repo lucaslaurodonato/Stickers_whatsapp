@@ -38,6 +38,8 @@ class StickerPackInfoActivity : BaseActivity() {
         darkMode()
         setupFields()
         receiveDataToSetup()
+        showStickerDogsToGooglePlay()
+        showStickerCatsToGooglePlay()
     }
 
     override fun onBackPressed() {
@@ -142,4 +144,29 @@ class StickerPackInfoActivity : BaseActivity() {
         startActivity(intent)
     }
 
+    private fun showStickerDogsToGooglePlay() {
+        sticker_dogs.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW).apply {
+                data = Uri.parse(
+                    "https://play.google.com/store/apps/details?id=br.com.stickersdogs"
+                )
+                setPackage("com.android.vending")
+            }
+            startActivity(intent)
+        }
+    }
+
+    private fun showStickerCatsToGooglePlay() {
+        sticker_cats.setOnClickListener {
+            val intent = Intent(Intent.ACTION_VIEW).apply {
+                data = Uri.parse(
+                    "https://play.google.com/store/apps/details?id=br.com.stickerscats"
+                )
+                setPackage("com.android.vending")
+            }
+            startActivity(intent)
+        }
+    }
+
 }
+

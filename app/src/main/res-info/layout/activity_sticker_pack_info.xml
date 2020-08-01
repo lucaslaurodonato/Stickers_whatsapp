@@ -69,30 +69,26 @@
             app:layout_constraintTop_toBottomOf="@+id/view_webpage" />
 
         <TextView
-            android:id="@+id/privacy_policy"
+            android:id="@+id/sticker_dogs"
             style="@style/InfoButtonStyle"
-            android:drawableStart="@drawable/ic_padlock"
-            android:drawableLeft="@drawable/ic_padlock"
+            android:drawableStart="@drawable/stickers_dogs"
+            android:drawableLeft="@drawable/stickers_dogs"
             android:text="@string/privacy_policy"
             android:textColor="?attr/textColor"
-            android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="@+id/send_email"
-            app:layout_constraintTop_toBottomOf="@+id/send_email"
-            tools:visibility="visible" />
+            app:layout_constraintTop_toBottomOf="@+id/send_email" />
 
         <TextView
-            android:id="@+id/license_agreement"
+            android:id="@+id/sticker_cats"
             style="@style/InfoButtonStyle"
-            android:drawableStart="@drawable/ic_menu"
-            android:drawableLeft="@drawable/ic_menu"
+            android:drawableStart="@drawable/stickers_cats"
+            android:drawableLeft="@drawable/stickers_cats"
             android:text="@string/license_agreement"
             android:textColor="?attr/textColor"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="@+id/privacy_policy"
-            app:layout_constraintStart_toStartOf="@+id/privacy_policy"
-            app:layout_constraintTop_toBottomOf="@+id/privacy_policy"
-            tools:visibility="visible" />
+            app:layout_constraintEnd_toEndOf="@+id/sticker_dogs"
+            app:layout_constraintStart_toStartOf="@+id/sticker_dogs"
+            app:layout_constraintTop_toBottomOf="@+id/sticker_dogs" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
