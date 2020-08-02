@@ -195,6 +195,34 @@
             "😑",
             ""
           ]
+        },
+        {
+          "image_file": "meme_pack_32_14.webp",
+          "emojis": [
+            "😑",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_32_15.webp",
+          "emojis": [
+            "😑",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_32_16.webp",
+          "emojis": [
+            "😑",
+            ""
+          ]
+        },
+        {
+          "image_file": "meme_pack_32_17.webp",
+          "emojis": [
+            "😑",
+            ""
+          ]
         }
       ]
     },
@@ -320,13 +348,6 @@
           "emojis": [
             "🤦",
             "🤦"
-          ]
-        },
-        {
-          "image_file": "meme_pack_18_17.webp",
-          "emojis": [
-            "🤷",
-            "🤷"
           ]
         },
         {
@@ -713,7 +734,7 @@
       "identifier": "23",
       "name": "Stickers Pack",
       "publisher": "Stickers Memes Brasil",
-      "tray_image_file": "meme_pack_23_1.webp",
+      "tray_image_file": "meme_pack_23_3.webp",
       "image_data_version": "1",
       "avoid_cache": false,
       "publisher_email": "lucaslaurodonato@hotmail.com",
@@ -1686,7 +1707,7 @@
       "identifier": "28",
       "name": "Stickers Pack",
       "publisher": "Stickers Memes Brasil",
-      "tray_image_file": "meme_pack_28_1.webp",
+      "tray_image_file": "meme_pack_28_3.webp",
       "image_data_version": "1",
       "avoid_cache": false,
       "publisher_email": "lucaslaurodonato@hotmail.com",
