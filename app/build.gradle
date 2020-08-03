@@ -13,8 +13,8 @@ android {
         applicationId "br.com.stickersbrasil"
         minSdkVersion 19
         targetSdkVersion 30
-        versionCode 6
-        versionName "0.0.6"
+        versionCode 7
+        versionName "0.0.7"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
 
