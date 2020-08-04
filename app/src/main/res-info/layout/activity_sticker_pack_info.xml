@@ -68,27 +68,5 @@
             app:layout_constraintStart_toStartOf="@+id/view_webpage"
             app:layout_constraintTop_toBottomOf="@+id/view_webpage" />
 
-        <TextView
-            android:id="@+id/sticker_dogs"
-            style="@style/InfoButtonStyle"
-            android:drawableStart="@drawable/stickers_dogs"
-            android:drawableLeft="@drawable/stickers_dogs"
-            android:text="@string/privacy_policy"
-            android:textColor="?attr/textColor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="@+id/send_email"
-            app:layout_constraintTop_toBottomOf="@+id/send_email" />
-
-        <TextView
-            android:id="@+id/sticker_cats"
-            style="@style/InfoButtonStyle"
-            android:drawableStart="@drawable/stickers_cats"
-            android:drawableLeft="@drawable/stickers_cats"
-            android:text="@string/license_agreement"
-            android:textColor="?attr/textColor"
-            app:layout_constraintEnd_toEndOf="@+id/sticker_dogs"
-            app:layout_constraintStart_toStartOf="@+id/sticker_dogs"
-            app:layout_constraintTop_toBottomOf="@+id/sticker_dogs" />
-
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
