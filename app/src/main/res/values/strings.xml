@@ -6,7 +6,7 @@
     <string name="more_info_button">More info about sticker pack</string>
 
     <!--Button add pack-->
-    <string name="add_to_whatsapp">Add to WhatsApp</string>
+    <string name="add_to_whatsapp">Add</string>
     <string name="package_already_added">Already added</string>
 
     <string name="add_button_content_description">Add sticker pack to WhatsApp</string>

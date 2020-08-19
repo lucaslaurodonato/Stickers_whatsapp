@@ -114,8 +114,6 @@
             android:layout_gravity="center"
             android:background="@drawable/btn_blue"
             android:clickable="false"
-            android:drawableStart="@drawable/sticker_3rdparty_wa"
-            android:drawableLeft="@drawable/sticker_3rdparty_wa"
             android:focusable="false"
             tools:text="@string/add_to_whatsapp" />
 

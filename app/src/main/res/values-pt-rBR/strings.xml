@@ -5,7 +5,7 @@
     <string name="more_info_button">Mais dados sobre o pacote de figurinhas</string>
 
     <!--Button add pack-->
-    <string name="add_to_whatsapp">Adicionar ao WhatsApp</string>
+    <string name="add_to_whatsapp">Adicionar</string>
     <string name="package_already_added">Adicionado</string>
 
     <string name="add_button_content_description">Adicionar pacote de figurinhas ao WhatsApp</string>
