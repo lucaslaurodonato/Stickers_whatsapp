@@ -21,3 +21,7 @@ Modo escuro implementado.
 ![google android](https://user-images.githubusercontent.com/47648982/130151444-64ed6c44-0699-4de9-a8e4-9f6d456f0a10.png)
 ![android 21](https://user-images.githubusercontent.com/47648982/130151447-5a46be90-5b92-4e33-90a0-8a512560861d.png)
 ![kotlin](https://user-images.githubusercontent.com/47648982/130151449-1c15bcf2-00fd-4a87-9e46-8af2a2b39038.png)
+
+
+Technologies Used
+Java, Kotlin, Gradle, JUnit
